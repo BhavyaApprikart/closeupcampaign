@@ -1,0 +1,207 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../assets/Enter details.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.maincontentbox{
+    padding-top: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.logowrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logowrapper>img{
+    width: 100%;
+    max-width: 140px;
+}
+
+.singerdesp{
+    width: 90%;
+    text-align: center;
+}
+
+
+.singerdesp>p {
+    color: #FFF;
+    text-align: center;
+    font-family: Geologica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 100% */
+    
+}
+
+#singername {
+    color: #131313;
+    font-family: Geologica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.formbox{
+    padding: 6rem 0;
+    width:22rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    gap: 1rem;
+}
+
+.forminputbox{
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    width: 100%;
+    height:4.1rem;
+    /* background-color: black; */
+    background-image: url('../../assets/inputbackgn.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forminputbox>input{
+    width: 100%;
+    border: none !important;
+    background: none;
+    color: #B80000;
+    font-family: Geologica;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.forminputbox>input:focus{
+        outline: none;
+        border: none !important;
+}
+
+.forminputbox>input::placeholder{
+    color: #B80000;
+    font-family: Geologica;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.btnwrapper{
+    width:16rem;
+    height:auto;
+    overflow: hidden;
+    background-image: url('../../assets/Union.png');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+
+}
+
+.btnwrapper>button{
+    background: none;
+    color: #BE1E2D;
+    text-align: center;
+    font-family: Geologica;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+
+
+
+
+
+
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+    .logowrapper>img{
+        max-width:11.75rem;
+    }
+    
+
+
+}
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+    .container{
+        background-image: url('../../assets/registerbgdesktop.png');
+    } 
+
+    .singerdesp{
+        width: 48%;
+    }
+    .singerdesp>p {
+        font-size: 22px;
+        line-height: 22px;
+    }
+    #singername {
+        font-size: 22px;
+        line-height: 22px;
+    }
+    .formbox{
+        padding: 3.5rem 0;
+    }
+
+    .forminputbox{
+        padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+        width: 79%;
+        height:3.2rem;
+    }
+
+}
+
+/* xl */
+@media (min-width: 1280px) {
+
+    .container{
+        background-image: url('../../assets/registerbgdesktop.png');
+    } 
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+
+
+    .container{
+        background-image: url('../../assets/registerbgdesktop.png');
+    } 
+
+}

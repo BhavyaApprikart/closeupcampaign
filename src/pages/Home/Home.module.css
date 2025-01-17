@@ -1,0 +1,140 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../assets/Splash screen.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.maincontentbox{
+    padding-top: 2.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:2.5rem;
+}
+
+.logowrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logowrapper>img{
+    width: 100%;
+    max-width: 240px;
+}
+
+.content{
+    width:15rem;
+    overflow: hidden;
+}
+
+.content>p{
+    color: #FFF;
+    text-align: center;
+    font-family: Geologica;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btnwrapper{
+    margin-top: 4rem;
+    width:14rem;
+    height: auto;
+    overflow: hidden;
+    background-image: url('../../assets/Union.png');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+
+}
+
+.btnwrapper>button{
+    background: none;
+    color: #BE1E2D;
+    text-align: center;
+    font-family: Geologica;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+@media (min-width: 640px) {
+
+    .container{
+        width: 100%;
+        background-image: url('../../assets/Splash sc-desktopbg.png');
+        flex-shrink: 0;
+    } 
+
+    .maincontentbox{
+        padding-top: 0;
+        gap:3.5rem;
+    }
+
+    .logowrapper>img{
+        max-width:20rem;
+    }
+    
+    .content{
+        width:100%;
+    }
+
+    .btnwrapper{
+        margin-top:1rem;
+        width:17rem;
+    }
+
+
+}
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+@media (min-width: 1024px) {
+    .container{
+        background-image: url('../../assets/Splash screen.png');
+
+    } 
+
+}
+
+/* xl */
+@media (min-width: 1280px) {
+
+    .container{
+        background-image: url('../../assets/Splash sc-desktopbg.png');
+    } 
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+
+
+    .container{
+        background-image: url('../../assets/Splash sc-desktopbg.png');
+    } 
+
+}
