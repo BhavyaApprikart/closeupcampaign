@@ -2,8 +2,12 @@ import style from './Selection.module.css';
 import logo from '../../assets/logo.png';
 import singer from '../../assets/singer.png';
 import starticon from '../../assets/Vector.png';
+import { useNavigate } from 'react-router-dom';
 
 const Selection = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className={style.container}>
     
@@ -39,7 +43,7 @@ const Selection = () => {
      </div>
 
      <div className={style.btnwrapper} >
-       <button className={style.button}> Generate lyrics </button>
+       <button className={style.button} onClick={()=>navigate('/loadingsong')}> Generate lyrics </button>
        <img src={starticon} alt="start icon"/>
     </div>
 

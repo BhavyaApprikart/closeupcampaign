@@ -56,15 +56,14 @@ const Loadingsong = () => {
     const navigate = useNavigate();
     const [progress, setProgress] = useState(10);
 
+      useEffect(() => { 
+            if(progress === 100)    {
+                setTimeout(() => {
+                    navigate('/thankyou')
+                }, 2000);
+            }
 
-    //   useEffect(() => { 
-    //         if(progress === 100)    {
-    //             setTimeout(() => {
-    //                 navigate('/thankyou')
-    //             }, 2000);
-    //         }
-
-    //   }, [progress]);
+      }, [progress]);
 
      useEffect(() => {
       const timer = setInterval(() => {
