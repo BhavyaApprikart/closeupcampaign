@@ -45,8 +45,7 @@ const Register = () => {
 
 
 const handleRegButtonClick = async () => {
-
-         try {
+        try {
               const response = await axios.get(`https://admin.closeuplovetunes.in/api/validate_otp/?mobile=${usermobileno}&otp=${userotp}&name=${username}&friend_name=${friendname}&feature1=${selectedFeature1}&feature2=${selectedFeature2}`);
                    
                    console.log('Register API Response:', response.data);
@@ -60,9 +59,34 @@ const handleRegButtonClick = async () => {
 
                } catch(error) {
                        console.error('Error:', error);
-             }
-
+         }
+      
   };
+
+  const handlenameinpBlur = (e) => {
+    if (!nameRegex.test(e.target.value)) {
+      document.getElementById("usernameError").textContent = "Please enter a valid name.";
+    } else {
+      document.getElementById("usernameError").textContent = "";
+    }
+  };
+
+  const handlenumberinpBlur = (e) => {
+       if(!indianPhoneNumberRegex.test(e.target.value)) {
+           document.getElementById("usermobilenoError").textContent = "Please enter a valid mobile number.";
+       }else{
+           document.getElementById("usermobilenoError").textContent = "";
+       }
+  };
+
+  const handleotpinpBlur = (e) => {
+          if(!otpRegex.test(e.target.value)) {
+              document.getElementById("userotpError").textContent = "Please enter a valid OTP.";
+          }else{
+              document.getElementById("userotpError").textContent = "";
+          }
+  };
+
 
 
   return (
@@ -89,33 +113,23 @@ const handleRegButtonClick = async () => {
           type="text"
           name="userotp"               
           value={userotp} 
-          onChange={(e) => { setUserOtp(e.target.value)
-          // if(!otpRegex.test(e.target.value)) {
-          //     document.getElementById("userotpError").textContent = "Please enter a valid OTP.";
-          // }else{
-          //     document.getElementById("userotpError").textContent = "";
-          // }
-         }} 
-       required/>
+          onChange={(e) => { setUserOtp(e.target.value)  }} 
+          onBlur={handleotpinpBlur}
+          required/>
       </div>
       </div>
       :
       <div className={style.formbox}>
-         <span id="errorresponse"></span> 
+       <span id="errorresponse"></span> 
       <div className={style.forminputbox}>
         <span id="usernameError"></span> 
        <input placeholder='Enter name' 
        type="text"
        name="username"               
        value={username} 
-       onChange={(e) => { setUserName(e.target.value)
-      //  if(!nameRegex.test(e.target.value)) {
-      //      document.getElementById("usernameError").textContent = "Please enter a valid name.";
-      //  }else{
-      //      document.getElementById("usernameError").textContent = "";
-      //  }
-     }}  
-       required/>
+       onChange={(e) => { setUserName(e.target.value)}} 
+       onBlur={handlenameinpBlur}
+       required />
       </div>
      <div className={style.forminputbox}>
        <span id="usermobilenoError"></span> 
@@ -123,13 +137,8 @@ const handleRegButtonClick = async () => {
        type="text"
        name="usermobileno"               
        value={usermobileno} 
-       onChange={(e) => { setUserMobileNo(e.target.value)
-      //  if(!indianPhoneNumberRegex.test(e.target.value)) {
-      //      document.getElementById("usermobilenoError").textContent = "Please enter a valid mobile number.";
-      //  }else{
-      //      document.getElementById("usermobilenoError").textContent = "";
-      //  }
-     }}  
+       onChange={(e) => { setUserMobileNo(e.target.value) }} 
+       onBlur={handlenumberinpBlur}
        required />
      </div>
     </div>
