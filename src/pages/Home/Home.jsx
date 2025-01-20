@@ -63,11 +63,11 @@ const Home = () => {
 
     <div className={style.logowrapper}>
 
-         <img id={style.closeuplogoletter} src={closeupLetter} className={style.animateFadeOut0 } alt="logo" />
-         <img id={style.LLetter} src={LLetter} className={style.animateFadeOut0 } alt="logo" />
-         <img id={style.lovesymbol}  src={lovesymbol} className={style.animateFadeOut0 } alt="logo" />
-         <img id={style.VLetter}  src={VStrokeLetter} className={style.animateFadeOut0 } alt="logo" />
-         <img id={style.ELetter}  src={EstrokeLetter} className={style.animateFadeOut0 } alt="logo" />
+         <img id={style.closeuplogoletter} src={closeupLetter} alt="logo" />
+         <img id={style.LLetter}      src={LLetter}  alt="logo" />
+         <img id={style.lovesymbol}   src={lovesymbol}  alt="logo" />
+         <img id={style.VLetter}      src={VStrokeLetter}  alt="logo" />
+         <img id={style.ELetter}      src={EstrokeLetter}  alt="logo" />
 
          <img id={style.TLetter} src={TLetter} alt="logo" />
          <img id={style.ULetter} src={ULetter} alt="logo" />

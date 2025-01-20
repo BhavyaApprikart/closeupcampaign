@@ -119,7 +119,16 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  
 }
+
+.forminputbox select option {
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: Geologica;
+    font-weight: 300;
+    color: #131313;
+  }
 
 .forminputbox>input:focus, .forminputbox>select:focus {
     outline: none;

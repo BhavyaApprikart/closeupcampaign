@@ -24,6 +24,16 @@
     }
   }
    
+  @keyframes bottomelementslideIn {
+    0% {
+      transform: translate(100%, 100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0,0);
+      opacity: 1;
+    }
+  }
 
   @keyframes topheartanimation {
     0% {
@@ -70,17 +80,6 @@
       }
     }
 
-
-
-
-
-
-
-
-
-
-
-
   @keyframes xoxobgslideIn {
     0% {
         transform: translateX(100%);
@@ -124,11 +123,15 @@
     }
   }
   
-  #topleftpinksheet,
+  #topleftpinksheet
+   {
+     animation: topelementslideIn 2s ease-in-out, float 2s ease-in-out 2s;
+   }
+
   #bottomleftbackground,
   #bottomrightpinkpaper
    {
-     animation: topelementslideIn 2s ease-in-out, float 2s ease-in-out 2s;
+     animation: bottomelementslideIn 2s ease-in-out, float 2s ease-in-out 2s;
   }
 
   #toprightletter{
@@ -142,8 +145,6 @@
   #topleftheart{
      animation: topheartanimation 2s ease-in-out, float 2s ease-in-out 2s;
   }
-
-
 
 
 #topleftpinksheet{
@@ -346,14 +347,10 @@ left:20%;
         #LLetter,
         #lovesymbol,
         #VLetter,
-        #ELetter,
-        #TLetter,
-        #ULetter,
-        #nLetter,
-        #eLetter,
-        #sLetter
+        #ELetter
          {
-          animation: float 2s ease-in-out 2s;
+           /* animation: float 2s ease-in-out 2s; */
+           animation: fadeOutUp 2s forwards;
         }
 
 .content{
@@ -443,11 +440,11 @@ left:20%;
 
   @keyframes fadeOutUp {
     0% {
-      opacity: 1;
-      transform: translateY(100px);
+      opacity: 0;
+      transform: translateY(-100%);
     }
     100% {
-      opacity: 0;
+      opacity: 1;
       transform: translateY(0);
     }
   }
@@ -541,6 +538,36 @@ left:20%;
         width: 28%;
         height: 240px;
     }
+
+    #topleftpinksheet{
+      width: 232.441px;
+      height: 239.9px;
+  }
+
+  #topleftletter{
+      width: 140.068px;
+      height: 158.068px;
+  }
+
+  #topleftheart{
+        width: 164.901px;
+        height: 152px;
+  }
+
+  #toprightletter{
+      width: 200.976px;
+      height: 221.5px;
+  }
+
+  #giftbox{
+    width: 198.148px;
+    height: 174.32px;
+  }
+
+
+
+
+
 
 
 }

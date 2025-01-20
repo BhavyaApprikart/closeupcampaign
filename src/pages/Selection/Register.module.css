@@ -79,8 +79,19 @@
     background-size: cover;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     align-items: center;
     justify-content: center;
+}
+
+#errorresponse, #userotpError, #usernameError, #usermobilenoError{
+      color: #fff;
+      font-size: 14px;
+      font-family: Geologica;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
 }
 
 .forminputbox>input{
@@ -134,13 +145,6 @@
     font-weight: 600;
     line-height: normal;
 }
-
-
-
-
-
-
-
 
 
 /* xs */
