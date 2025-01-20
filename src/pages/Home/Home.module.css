@@ -1,39 +1,364 @@
 .container{
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('../../assets/Splash screen.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: #D21F32;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
 }
 
+@keyframes topelementslideIn {
+    0% {
+      transform: translate(-100%, -100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0,0);
+      opacity: 1;
+    }
+  }
+   
+
+  @keyframes topheartanimation {
+    0% {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(10px);
+      opacity: 0.7;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+  }
+
+  @keyframes toplettermsganimation {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(50px);
+    opacity: 0.7;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes topenvelopanimation {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(50px);
+      opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+  @keyframes xoxobgslideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+  }
+  
+  @keyframes giftslideIn {
+    0% {
+      transform: translate(50%,100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+
+
+  @keyframes xoxoslideIn {
+    0% {
+        transform: translateY(200px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  #topleftpinksheet,
+  #bottomleftbackground,
+  #bottomrightpinkpaper
+   {
+     animation: topelementslideIn 2s ease-in-out, float 2s ease-in-out 2s;
+  }
+
+  #toprightletter{
+    animation: topenvelopanimation 2s ease-in-out, float 2s ease-in-out 2s; 
+  }
+
+  #topleftletter{
+     animation: toplettermsganimation 2s ease-in-out, float 2s ease-in-out 2s;
+  }
+
+  #topleftheart{
+     animation: topheartanimation 2s ease-in-out, float 2s ease-in-out 2s;
+  }
+
+
+
+
+#topleftpinksheet{
+    position: absolute;
+    top: -5px;
+    left: 0;
+   
+}
+
+#topleftletter{
+    width: 100px;
+    height: 89px;
+    position: absolute;
+    top: 100px;
+    left: -30px;
+    
+}
+
+#topleftheart{
+    position: absolute;
+    top: -30px;
+    left: 100px;
+}
+
+#toprightletter{
+    width: 140px;
+    height: 179px;
+    position: absolute;
+    top: 5px;
+    right: -62px;
+    
+}
+
+#xoxobackground{
+    width: 300.652px;
+    height: 262.654px;
+    transform: rotate(-16.707deg);
+     position: absolute;
+     top:31%;
+     right: -117px;   
+     animation: xoxobgslideIn 2s ease-out;
+}
+
+#xoxo{
+    width: 64px;
+    height: 36px;
+    position: absolute;
+    top:47.67%;
+    right: 20px; 
+    animation: xoxoslideIn 2s ease-out;
+}
+
+
+#giftbox{
+width: 153.48px;
+height: 126px;
+position: relative;
+top: 47%;
+left: -59px;
+animation: giftslideIn 2s ease-out;
+transform-origin: center bottom;
+}
+
+
+#bottomleftbackground{
+    width: 243.1px;
+    height: 110px;
+    position: absolute;
+    bottom: -42px;
+    left: -59px;
+}
+
+#bottomrightpinkpaper{
+    width: 210.236px;
+    height: 126px;
+    position: absolute;
+    bottom: -6px;
+    right: -45px;
+
+}
+
+#bottomrightroses{
+    width: 108.443px;
+    height: 96.254px;
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    animation: roseslideIn 2s ease-out;
+}
+
+@keyframes roseslideIn{
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+  }
+
 .maincontentbox{
-    padding-top: 2.5rem;
+    margin-top: -4rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap:2.5rem;
+    justify-content:space-between;
 }
 
 .logowrapper{
     width: 100%;
-    display: flex;
-    justify-content: center;
+    height: 240px;
+    display:block;
+    position: relative;
 }
 
-.logowrapper>img{
-    width: 100%;
-    max-width: 240px;
+#closeuplogoletter{
+    width:  103px;
+    height: 31px;
+    position: absolute;
+    top:0;
+    left:20%;
 }
+#LLetter{
+    width: 52.773px;
+    height: 75.95px;
+    position: absolute;
+    top:30px;
+    left:20%;
+}
+#lovesymbol{
+    width: 87.989px;
+    height: 75.88px;
+    position: absolute;
+    top:30px;
+    left:26%;
+}
+#VLetter{
+    width: 77.954px;
+    height: 75.95px;
+    position: absolute;
+    top:30px;
+    left:46.61%;
+}
+#ELetter{
+    width: 55.451px;
+    height: 75.95px;
+    position: absolute;
+    top:30px;
+    left:65.55%;
+}
+
+#TLetter{
+width: 99.41px;
+height: 99.455px;
+position: absolute;
+top:80px;
+left:20%;
+}
+
+#ULetter{
+    width: 49.41px;
+    height: 25.455px;
+    transform: rotate(-13.676deg);
+    position: absolute;
+    top:140px;
+    left:29.74%;
+    }
+
+    #nLetter{
+        width: 56.41px;
+        height: 25.455px;
+        transform: rotate(-13.676deg);
+        position: absolute;
+        top:130px;
+        left:36.98%;
+        }
+
+        #eLetter{
+            width: 65.41px;
+            height: 29.455px;
+            transform: rotate(-13.676deg);
+            position: absolute;
+            top:120px;
+            left:45.98%;
+       }
+
+        #sLetter{
+            width: 74.41px;
+            height: 34.455px;
+            transform: rotate(-13.676deg);
+            position: absolute;
+            top:100px;
+            left:57.12%;
+        }
+
+
+        #closeuplogoletter,
+        #LLetter,
+        #lovesymbol,
+        #VLetter,
+        #ELetter,
+        #TLetter,
+        #ULetter,
+        #nLetter,
+        #eLetter,
+        #sLetter
+         {
+          animation: float 2s ease-in-out 2s;
+        }
 
 .content{
+    margin-top: -1.2rem;
+    margin-bottom: 0.5rem;
     width:15rem;
     overflow: hidden;
 }
@@ -75,26 +400,119 @@
 }
 
 
+@keyframes slideUp {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .content {
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  .btnwrapper {
+    animation: slideUp 0.5s ease-out;
+  }
+  
 
+  /* @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(50%, 50%);
+    }
+  }
+  
+  .fadeOut {
+    opacity: 1;
+    transition: opacity 2s ease-out, transform 2s ease-out;
+  }
+  
+  .animateFadeOut {
+    animation: fadeOut 2s forwards;
+  } */
+
+
+  @keyframes fadeOutUp {
+    0% {
+      opacity: 1;
+      transform: translateY(100px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeOutDown {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+  }
+  
+  @keyframes fadeOutLeft {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes fadeOutRight {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+  
+  .fadeOut {
+    opacity: 1;
+    transition: opacity 2s ease-out, transform 2s ease-out;
+  }
+  
+  .animateFadeOut0 {
+    animation: fadeOutUp 2s forwards;
+  }
+  
+  .animateFadeOut1 {
+    animation: fadeOutDown 2s forwards;
+  }
+  
+  .animateFadeOut2 {
+    animation: fadeOutLeft 2s forwards;
+  }
+  
+  .animateFadeOut3 {
+    animation: fadeOutRight 2s forwards;
+  }
 /* xs */
 /* @media (min-width: 475px) {} */
 
 /* sm */
 @media (min-width: 640px) {
-
-    .container{
-        width: 100%;
-        background-image: url('../../assets/Splash sc-desktopbg.png');
-        flex-shrink: 0;
-    } 
-
     .maincontentbox{
         padding-top: 0;
         gap:3.5rem;
-    }
-
-    .logowrapper>img{
-        max-width:20rem;
     }
     
     .content{
@@ -106,6 +524,11 @@
         width:17rem;
     }
 
+    .logowrapper{
+        width: 50%;
+        height: 240px;
+    }
+
 
 }
 
@@ -114,27 +537,24 @@
 
 /* lg */
 @media (min-width: 1024px) {
-    .container{
-        background-image: url('../../assets/Splash screen.png');
+    .logowrapper{
+        width: 28%;
+        height: 240px;
+    }
 
-    } 
 
 }
 
 /* xl */
 @media (min-width: 1280px) {
 
-    .container{
-        background-image: url('../../assets/Splash sc-desktopbg.png');
-    } 
+
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
 
 
-    .container{
-        background-image: url('../../assets/Splash sc-desktopbg.png');
-    } 
+
 
 }
