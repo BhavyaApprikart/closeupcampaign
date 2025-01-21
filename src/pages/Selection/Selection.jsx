@@ -42,6 +42,13 @@ const Selection = () => {
     });
   };
 
+  const handlenameinpBlur = (e) => {
+    if (!nameRegex.test(e.target.value)) {
+      document.getElementById("friendnameError").textContent = "Please enter a valid name.";
+    } else {
+      document.getElementById("friendnameError").textContent = "";
+    }
+  };
 
   return (
     <div className={style.container}>
@@ -58,20 +65,17 @@ const Selection = () => {
        <span id={style.singername}> Dhvani Bhanushali </span> just for your loved one! </p>
      </div>
     
+     <span id="friendnameError"></span> 
+
     <div className={style.formbox}>
-       <span id="friendnameError"></span> 
       <div className={style.forminputbox}>
       <input placeholder='Enter Recipient’s name'  
       type="text"
       name="friendname"               
       value={friendname} 
-      onChange={(e) => {  setFriendName(e.target.value)
-      if(!nameRegex.test(e.target.value)) {
-          document.getElementById("friendnameError").textContent = "Please enter a valid name.";
-      }else{
-          document.getElementById("friendnameError").textContent = "";
-      }
-    }} required />
+      onChange={(e) => {  setFriendName(e.target.value) }} 
+      onBlur={handlenameinpBlur}
+    required />
      </div>
 
      <div className={style.forminputbox}>
