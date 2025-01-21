@@ -114,7 +114,7 @@ const handleRegButtonClick = async () => {
           name="userotp"               
           value={userotp} 
           onChange={(e) => { setUserOtp(e.target.value)  }} 
-          onBlur={handleotpinpBlur}
+          // onBlur={handleotpinpBlur}
           required/>
       </div>
       </div>
@@ -128,7 +128,7 @@ const handleRegButtonClick = async () => {
        name="username"               
        value={username} 
        onChange={(e) => { setUserName(e.target.value)}} 
-       onBlur={handlenameinpBlur}
+      //  onBlur={handlenameinpBlur}
        required />
       </div>
      <div className={style.forminputbox}>
@@ -138,7 +138,7 @@ const handleRegButtonClick = async () => {
        name="usermobileno"               
        value={usermobileno} 
        onChange={(e) => { setUserMobileNo(e.target.value) }} 
-       onBlur={handlenumberinpBlur}
+      //  onBlur={handlenumberinpBlur}
        required />
      </div>
     </div>
