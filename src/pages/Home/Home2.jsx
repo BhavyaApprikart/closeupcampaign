@@ -1,6 +1,6 @@
 import style from './Home2.module.css';
 import logo from '../../assets/logo.png'; 
-import bgvideo from '../../assets/Intro video closeup (1).mp4';
+import bgvideo from '../../assets/Closeup.mp4';
 import starticon from '../../assets/Vector.png';
 import { useNavigate } from 'react-router-dom';
 

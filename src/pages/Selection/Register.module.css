@@ -79,19 +79,26 @@
     background-size: cover;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
     align-items: center;
     justify-content: center;
 }
 
-#errorresponse, #userotpError, #usernameError, #usermobilenoError{
+.maincontentbox #errorresponse {
       color: #fff;
-      font-size: 14px;
+      font-size: 12px;
       font-family: Geologica;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+}
+
+.maincontentbox>span {
+    color: #fff;
+    font-size: 12px;
+    font-family: Geologica;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .forminputbox>input{
@@ -181,7 +188,7 @@
         line-height: 22px;
     }
     .formbox{
-        padding: 3.5rem 0;
+        padding: 2.5rem 0;
     }
 
     .forminputbox{
