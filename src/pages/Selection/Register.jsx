@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import erroricon from '../../assets/radix-icons_cross-circled.svg';
 
 
 const Register = () => {
@@ -12,86 +13,122 @@ const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { friendname, selectedFeature1, selectedFeature2 } = location.state || {};
-
   const[ showotpscreen, setShowOtpScreen] = useState(false);
   const[ username,setUserName] = useState('');
   const[ usermobileno,setUserMobileNo] = useState('');
   const[ userotp,setUserOtp] = useState('');
-
+  const [errors, setErrors] = useState({});
   const otpRegex = /^\d{4}$/;
-  const nameRegex =  /^[a-zA-Z]{4,30}$/;
+  const nameRegex =  /^[a-zA-Z]{3,10}$/;
   const indianPhoneNumberRegex = /^[789]\d{9}$/;
 
   const handleOTPButtonClick = async () => {
 
-   if(!nameRegex.test(username)) {
-      document.getElementById("errorresponse").innerText = "Invalid name, a minimum of four characters is required.";
+    const newErrors = {};
+
+    if (!nameRegex.test(username)) {
+        newErrors.username = `Your name must be between 3-10 characters. If it's longer, please use a nickname.`;
+    }
+
+    if (!username) {
+      newErrors.friendname = `Your name must be between 3-10 characters. If it's longer, please use a nickname.`;  
+    }
+
+    if (!usermobileno) {
+      newErrors.usermobileno = 'Please enter a 10-digit mobile number.';
+    }
+
+    if (!indianPhoneNumberRegex.test(usermobileno)) {
+      newErrors.usermobileno = 'Please enter a 10-digit mobile number.';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
-    else if (!indianPhoneNumberRegex.test(usermobileno)) {
-        document.getElementById("errorresponse").innerText = "Invalid Mobile Number, provide your 10 digit phone number.";
-        return;
-   }   
-    else{
            try {
                  const response = await axios.get(`https://admin.closeuplovetunes.in/api/get_otp/?mobile=${usermobileno}&name=${username}`);
-                 console.log(' OTP API Response:', response.data);
+                 console.log('Sending OTP API Response:', response.data);
 
                  if(response.data.status === "success"){
                            setShowOtpScreen(true);
                   }      
                   else{
-                       document.getElementById("errorresponse").textContent = response.data.msg;
+                       setErrors({ errorresponse: response.data.msg });
                  }
                } catch (error) {
                  console.error('Error:', error);
                  // Handle error if the API call fails
            }
-      }
+   
 };
 
 
 const handleRegButtonClick = async () => {
 
-  if(!otpRegex.test(userotp)) {
-      document.getElementById("errorresponse").textContent = "Invalid OTP";
+  const newErrors = {};
+
+    if (!otpRegex.test(userotp)) {
+      newErrors.userotp = 'Please enter a valid OTP.';
+    }
+
+    if (!userotp) {
+      newErrors.userotp = 'Please enter a valid OTP.';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
-  }   
-  else{
-        try {
+    }
+
+  try {
           const response = await axios.get(`https://admin.closeuplovetunes.in/api/validate_otp/?mobile=${usermobileno}&otp=${userotp}&name=${username}&friend_name=${friendname}&feature1=${selectedFeature1}&feature2=${selectedFeature2}`);
                    
                    console.log('Register API Response:', response.data);
 
                      if(response.data.status === "success"){
-                             navigate(`/loadingsong`);
+
+                             navigate('/loadingsong', {
+                              state: {
+                                friendname,
+                                selectedFeature1,
+                                selectedFeature2,
+                              },
+                            });
                      }      
                      else{
-                         document.getElementById("errorresponse").textContent = response.data.msg;
+                         setErrors({ otp: 'Invalid OTP. Please try again.' });
                      }
 
                } catch(error) {
                        console.error('Error:', error);
-         }
-    }
-
+      }
 };
 
-  const handlenameinpBlur = (e) => {
-    if (!nameRegex.test(e.target.value)) {
-      document.getElementById("usernameError").textContent = "Please enter a valid name.";
-    } else {
-      document.getElementById("usernameError").textContent = "";
-    }
-  };
+const handleChangeUsername = (event) => {
+  setUserName(event.target.value);
+  setErrors((prevErrors) => ({ ...prevErrors, username: '' }));
+  setErrors((prevErrors) => ({ ...prevErrors, errorresponse: '' }));
+};
 
-  const handlenumberinpBlur = (e) => {
-       if(!indianPhoneNumberRegex.test(e.target.value)) {
-           document.getElementById("usermobilenoError").textContent = "Please enter a valid mobile number.";
-       }else{
-           document.getElementById("usermobilenoError").textContent = "";
-       }
-  };
+const handleChangeUserMobileNo = (event) => {
+  setUserMobileNo(event.target.value);
+  setErrors((prevErrors) => ({ ...prevErrors, usermobileno: '' }));
+  setErrors((prevErrors) => ({ ...prevErrors, errorresponse: '' }));
+};
+
+const handleChangeUserOtp = (event) => {
+  setUserOtp(event.target.value);
+  setErrors((prevErrors) => ({ ...prevErrors, userotp: '' }));
+  setErrors((prevErrors) => ({ ...prevErrors, errorresponse: '' }));
+};
+
+const handleerrorboxclick = () => {
+  setErrors((prevErrors) => ({ ...prevErrors, username: '' }));
+  setErrors((prevErrors) => ({ ...prevErrors, usermobileno: '' }));
+  setErrors((prevErrors) => ({ ...prevErrors, userotp: '' }));
+  setErrors((prevErrors) => ({ ...prevErrors, errorresponse: '' }));
+};
 
   return (
     <div className={style.container}>
@@ -105,7 +142,7 @@ const handleRegButtonClick = async () => {
      <div className={style.singerdesp}>
      <p> Experience the Magic of <span id={style.singername}> Dhvani Bhanushali </span> Music – Anytime, Anywhere!</p>
      </div>
-     <span id="errorresponse"></span> 
+ 
      {  
       showotpscreen ? 
       <div className={style.formbox}>
@@ -114,20 +151,19 @@ const handleRegButtonClick = async () => {
           type="text"
           name="userotp"               
           value={userotp} 
-          onChange={(e) => { setUserOtp(e.target.value)  }} 
+          onChange={handleChangeUserOtp}
           required/>
       </div>
       </div>
       :
       <div className={style.formbox}>
-       <span id="errorresponse"></span> 
+
       <div className={style.forminputbox}>
        <input placeholder='Enter name' 
        type="text"
        name="username"               
        value={username} 
-       onChange={(e) => { setUserName(e.target.value)}} 
-       onBlur={handlenameinpBlur}
+       onChange={handleChangeUsername}
        required />
       </div>
      <div className={style.forminputbox}>
@@ -135,8 +171,7 @@ const handleRegButtonClick = async () => {
        type="text"
        name="usermobileno"               
        value={usermobileno} 
-       onChange={(e) => { setUserMobileNo(e.target.value) }} 
-        onBlur={handlenumberinpBlur}
+       onChange={handleChangeUserMobileNo}
        required />
      </div>
     </div>
@@ -146,6 +181,23 @@ const handleRegButtonClick = async () => {
       <button className={style.button} > { showotpscreen ? "Register" : "Send OTP"}  </button>
       <img src={starticon} alt="start icon"/>
       </div>
+
+
+
+      { errors && Object.keys(errors).length > 0 
+        && (errors.username || errors.usermobileno || errors.userotp || errors.errorresponse  )
+        && (
+        <div className={style.errordisplay} onClick={handleerrorboxclick} >
+          <img src={erroricon} alt="Error icon" />
+          <div className={style.errorwrapper}>
+            <h3>Error</h3>
+            {errors.username && <span>{errors.username}</span>}
+            {errors.usermobileno && <span>{errors.usermobileno}</span>}
+            {errors.userotp && <span>{errors.userotp}</span>}
+            {errors.errorresponse && <span>{errors.errorresponse}</span>}
+          </div>
+        </div>
+      )}
 
     </div>
 

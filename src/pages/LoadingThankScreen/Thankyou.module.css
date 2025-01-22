@@ -1,24 +1,111 @@
 .container{
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('../../assets/Splash screen.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: #D21F32;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content:center;
+    justify-content: center;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#topleftpinksheet{
+    position: absolute;
+    top: -5px;
+    left: 0;
+}
+
+#topleftletter{
+    width: 100px;
+    height: 89px;
+    position: absolute;
+    top: 100px;
+    left: -30px;   
+}
+
+
+#topleftheart{
+    position: absolute;
+    top: -30px;
+    left: 100px;
+}
+
+#toprightletter{
+    width: 140px;
+    height: 179px;
+    position: absolute;
+    top: 1px;
+    right: -62px;  
+}
+
+#xoxobackground{
+    width: 300.652px;
+    height: 262.654px;
+    transform: rotate(-16.707deg);
+     position: absolute;
+     top:25.6%;
+     right: -117px;     
+}
+
+
+#xoxo{
+    width: 52px;
+    height: 31px;
+    position: absolute;
+    top:43.67%;
+    right: 20px; 
+}
+
+
+#giftbox{
+        width: 153.48px;
+        height: 126px;
+        position: absolute;
+        top: 60%;
+        left: -59px;
+}
+
+
+#bottomleftbackground{
+    width: 243.1px;
+    height: 110px;
+    position: absolute;
+    bottom: -42px;
+    left: -59px;
+}
+
+#bottomrightpinkpaper{
+    width: 210.236px;
+    height: 126px;
+    position: absolute;
+    bottom: -6px;
+    right: -45px;
+}
+
+#bottomrightroses{
+    width: 108.443px;
+    height: 96.254px;
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+
 }
 
 .maincontentbox{
+    position: absolute;
+    top: 15%;
+    left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:center;
-    gap:1rem;
+    gap: 1rem;
+    justify-content:space-between;
 }
 
 .logowrapper{
@@ -29,7 +116,19 @@
 
 .logowrapper>img{
     width: 100%;
-    max-width: 160px;
+    max-width: 120px;
+}
+
+  @keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+        transform-origin: bottom;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .content{
@@ -40,7 +139,7 @@
    flex-direction: column;
    align-items: center;
    justify-content:center;
-    
+   animation: slideUp 2s ease-out forwards;
 }
 
 .content>img{
@@ -121,10 +220,6 @@
 /* sm */
 @media (min-width: 640px) {
 
-    .maincontentbox{
-        padding-top: 1rem;
-    }
-
     .logowrapper>img{
         max-width:12rem;
     }
@@ -137,13 +232,99 @@
 /* lg */
 @media (min-width: 1024px) {
 
-    .container{
-         background-image: url('../../assets/Splash sc-desktopbg.png');
-    } 
-
     .maincontentbox{
-        padding-top:0.5rem;
+        position: absolute;
+        top: 3%;
+        left: 0;
     }
+
+#topleftpinksheet{
+    width: 283px;
+    height: 194.78px ;
+   
+}
+
+#topleftletter{
+    width: 151px;
+    height: 159px;
+    position: absolute;
+    top: 7.94rem;
+    left: -30px;
+    
+}
+
+#topleftheart{
+    width: 156px;
+    height: 132px;
+    position: absolute;
+    top: -35px;
+    left: 15rem;
+}
+
+#toprightletter{
+    width: 186px;
+    height: 192px;
+    position: absolute;
+    top: -5px;
+    right: -72px;
+    
+}
+
+#xoxobackground{
+    width: 324.652px;
+    height: 282.654px;
+    transform: rotate(-16.707deg);
+     position: absolute;
+     top:31%;
+     right: -117px;   
+}
+
+#xoxo{
+    width: 105px;
+    height: 52px;
+    position: absolute;
+    top:50.67%;
+    right: 20px; 
+    transform: rotate(32.465deg);
+
+}
+
+
+#giftbox{
+width: 199.48px;
+height: 178px;
+position: absolute;
+top: 55.76%;
+left: -68px;
+
+}
+
+
+#bottomleftbackground{
+    width: 333.1px;
+    height: 140px;
+    position: absolute;
+    bottom: -42px;
+    left: -59px;
+}
+
+#bottomrightpinkpaper{
+    width: 333.236px;
+    height: 156px;
+    position: absolute;
+    bottom: -6px;
+    right: -45px;
+
+}
+
+#bottomrightroses{
+    width: 165.443px;
+    height: 161px;
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+
+}
 
     .logowrapper>img{
         max-width:14rem;
@@ -162,16 +343,10 @@
 /* xl */
 @media (min-width: 1280px) {
 
-    .container{
-        background-image: url('../../assets/Splash sc-desktopbg.png');
-    } 
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
 
-    .container{
-        background-image: url('../../assets/Splash sc-desktopbg.png');
-    } 
 
 }

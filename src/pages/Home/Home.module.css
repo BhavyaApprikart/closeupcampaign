@@ -1,258 +1,208 @@
 .container{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    background: #D21F32;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background: #D21F32;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes topelementslideIn {
-    0% {
+@keyframes topleftpinksheetslideInDiagonal {
+  0% {
       transform: translate(-100%, -100%);
       opacity: 0;
-    }
-    100% {
-      transform: translate(0,0);
+  }
+  100% {
+      transform: translate(0, 0);
       opacity: 1;
-    }
   }
-   
-  @keyframes bottomelementslideIn {
-    0% {
-      transform: translate(100%, 100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translate(0,0);
-      opacity: 1;
-    }
-  }
+}
 
-  @keyframes topheartanimation {
-    0% {
-      transform: translateX(50px);
-      opacity: 0;
-    }
-    50% {
-      transform: translateX(10px);
-      opacity: 0.7;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-  }
+#topleftpinksheet{
+  position: absolute;
+  top: -5px;
+  left: 0;
+  animation: topleftpinksheetslideInDiagonal 2s ease-out forwards;
+}
 
-  @keyframes toplettermsganimation {
+
+@keyframes topleftletterslideIn {
   0% {
-    transform: translateY(100px);
-    opacity: 0;
+      transform: translateX(-100%);
+      opacity: 0;
   }
-  50% {
-    transform: translateY(50px);
-    opacity: 0.7;
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+#topleftletter{
+  width: 100px;
+  height: 89px;
+  position: absolute;
+  top: 100px;
+  left: -30px;
+  animation: topleftletterslideIn 2s ease-out forwards;
+  
+}
+
+@keyframes topleftheartslideIn {
+  0% {
+      transform: translateY(-100%);
+      opacity: 0;
+      transform-origin: top center;
   }
   100% {
       transform: translateY(0);
       opacity: 1;
-    }
   }
-
-  @keyframes topenvelopanimation {
-    0% {
-      transform: translateY(-100px);
-      opacity: 0;
-    }
-    50% {
-      transform: translateY(50px);
-      opacity: 0.7;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-  @keyframes xoxobgslideIn {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-  }
-  
-  @keyframes giftslideIn {
-    0% {
-      transform: translate(50%,100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translate(0, 0);
-      opacity: 1;
-    }
-  }
-
-
-  @keyframes xoxoslideIn {
-    0% {
-        transform: translateY(200px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
-  #topleftpinksheet
-   {
-     animation: topelementslideIn 2s ease-in-out, float 2s ease-in-out 2s;
-   }
-
-  #bottomleftbackground,
-  #bottomrightpinkpaper
-   {
-     animation: bottomelementslideIn 2s ease-in-out, float 2s ease-in-out 2s;
-  }
-
-  #toprightletter{
-    animation: topenvelopanimation 2s ease-in-out, float 2s ease-in-out 2s; 
-  }
-
-  #topleftletter{
-     animation: toplettermsganimation 2s ease-in-out, float 2s ease-in-out 2s;
-  }
-
-  #topleftheart{
-     animation: topheartanimation 2s ease-in-out, float 2s ease-in-out 2s;
-  }
-
-
-#topleftpinksheet{
-    position: absolute;
-    top: -5px;
-    left: 0;
-   
-}
-
-#topleftletter{
-    width: 100px;
-    height: 89px;
-    position: absolute;
-    top: 100px;
-    left: -30px;
-    
 }
 
 #topleftheart{
-    position: absolute;
-    top: -30px;
-    left: 100px;
+  position: absolute;
+  top: -30px;
+  left: 100px;
+  animation: topleftheartslideIn 2s ease-out forwards;
 }
 
 #toprightletter{
-    width: 140px;
-    height: 179px;
-    position: absolute;
-    top: 5px;
-    right: -62px;
-    
+  width: 140px;
+  height: 179px;
+  position: absolute;
+  top: 1px;
+  right: -62px;
+  animation: topleftpinksheetslideInDiagonal 2s ease-out forwards;    
 }
 
+@keyframes xoxobackgroundslideIn {
+  0% {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
 #xoxobackground{
-    width: 300.652px;
-    height: 262.654px;
-    transform: rotate(-16.707deg);
-     position: absolute;
-     top:31%;
-     right: -117px;   
-     animation: xoxobgslideIn 2s ease-out;
+  width: 300.652px;
+  height: 262.654px;
+  transform: rotate(-16.707deg);
+   position: absolute;
+   top:25.6%;
+   right: -117px;     
+   animation: xoxobackgroundslideIn 2s ease-out forwards; 
+}
+
+@keyframes slideInFromBottomCenter {
+  0% {
+      transform: translateY(100%) rotate(32.465deg);
+      opacity: 0;
+      transform-origin: bottom center;
+  }
+  100% {
+      transform: translateY(0) rotate(32.465deg);
+      opacity: 1;
+  }
 }
 
 #xoxo{
-    width: 64px;
-    height: 36px;
-    position: absolute;
-    top:47.67%;
-    right: 20px; 
-    animation: xoxoslideIn 2s ease-out;
+  width: 52px;
+  height: 31px;
+  position: absolute;
+  top:43.67%;
+  right: 20px; 
+  animation: slideInFromBottomCenter 2s ease-out forwards;
+
 }
 
+@keyframes slideInFromBottomCenterGiftbox {
+  0% {
+      transform: translate(50%, 50%);
+      opacity: 0;
+  }
+  100% {
+      transform: translate(0, 0);
+      opacity: 1;
+  }
+}
 
 #giftbox{
-width: 153.48px;
-height: 126px;
-position: relative;
-top: 47%;
-left: -59px;
-animation: giftslideIn 2s ease-out;
-transform-origin: center bottom;
+      width: 153.48px;
+      height: 126px;
+      position: absolute;
+      top: 60%;
+      left: -59px;
+      animation: slideInFromBottomCenterGiftbox 2s ease-out forwards;
 }
 
+@keyframes bottomleftbackgslideIn {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
 
 #bottomleftbackground{
-    width: 243.1px;
-    height: 110px;
-    position: absolute;
-    bottom: -42px;
-    left: -59px;
+  width: 243.1px;
+  height: 110px;
+  position: absolute;
+  bottom: -42px;
+  left: -59px;
+  animation: bottomleftbackgslideIn 2s ease-out forwards; 
+}
+
+@keyframes bottomrightslideInDiagonal {
+  0% {
+      transform: translate(100%, 100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translate(0, 0);
+      opacity: 1;
+  }
 }
 
 #bottomrightpinkpaper{
-    width: 210.236px;
-    height: 126px;
-    position: absolute;
-    bottom: -6px;
-    right: -45px;
-
+  width: 210.236px;
+  height: 126px;
+  position: absolute;
+  bottom: -6px;
+  right: -45px;
+  animation: bottomrightslideInDiagonal 2s ease-out forwards;
 }
 
 #bottomrightroses{
-    width: 108.443px;
-    height: 96.254px;
-    position: absolute;
-    bottom: 10px;
-    right: 12px;
-    animation: roseslideIn 2s ease-out;
+  width: 108.443px;
+  height: 96.254px;
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  animation: topleftheartslideIn 2s ease-out forwards;
+
 }
 
-@keyframes roseslideIn{
-    0% {
-        transform: translateY(-100px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-  }
-
 .maincontentbox{
-    margin-top: -4rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:space-between;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  justify-content:space-between;
 }
 
 .logowrapper{
@@ -276,13 +226,26 @@ transform-origin: center bottom;
     top:30px;
     left:20%;
 }
-#lovesymbol{
-    width: 87.989px;
-    height: 75.88px;
-    position: absolute;
-    top:30px;
-    left:26%;
+
+#heartfrequency{
+  width: 87.989px;
+  height: 75.88px;
+  position: absolute;
+  top:30px;
+  left:26%;
+  background-image: url('../../assets/Closeup logo Variation (3) 1.png');
+   background-size: contain;
+   background-position: center center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
+
+#heartfrequency>img{
+  width: 55px;
+  height: 45px;
+}
+
 #VLetter{
     width: 77.954px;
     height: 75.95px;
@@ -307,7 +270,7 @@ left:20%;
 }
 
 #ULetter{
-    width: 49.41px;
+    width: 56.41px;
     height: 25.455px;
     transform: rotate(-13.676deg);
     position: absolute;
@@ -321,7 +284,7 @@ left:20%;
         transform: rotate(-13.676deg);
         position: absolute;
         top:130px;
-        left:36.98%;
+        left:37.68%;
         }
 
         #eLetter{
@@ -343,15 +306,49 @@ left:20%;
         }
 
 
+        @keyframes float {
+          0%, 100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(-5px);
+          }
+        }
+        
+        /* @keyframes settle {
+          0% {
+            transform: translateY(-10%);
+            opacity: 0;
+          }
+          50% {
+            transform: translateY(10%);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        } */
+
+        #topleftpinksheet,
+        #topleftletter,
+        #topleftheart,
+        #toprightletter,
+        #bottomleftbackground,
+        #bottomrightpinkpaper,
+        #bottomrightroses
         #closeuplogoletter,
         #LLetter,
         #lovesymbol,
         #VLetter,
         #ELetter
          {
-           /* animation: float 2s ease-in-out 2s; */
-           animation: fadeOutUp 2s forwards;
+          animation: float 2s ease-in-out 2s forwards;
         }
+
+
+
+
 
 .content{
     margin-top: -1.2rem;
@@ -416,101 +413,14 @@ left:20%;
     animation: slideUp 0.5s ease-out;
   }
   
+  
 
-  /* @keyframes fadeOut {
-    0% {
-      opacity: 1;
-      transform: translate(0, 0);
-    }
-    100% {
-      opacity: 0;
-      transform: translate(50%, 50%);
-    }
-  }
   
-  .fadeOut {
-    opacity: 1;
-    transition: opacity 2s ease-out, transform 2s ease-out;
-  }
-  
-  .animateFadeOut {
-    animation: fadeOut 2s forwards;
-  } */
-
-
-  @keyframes fadeOutUp {
-    0% {
-      opacity: 0;
-      transform: translateY(-100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fadeOutDown {
-    0% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(100px);
-    }
-  }
-  
-  @keyframes fadeOutLeft {
-    0% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-  }
-  
-  @keyframes fadeOutRight {
-    0% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-  }
-  
-  .fadeOut {
-    opacity: 1;
-    transition: opacity 2s ease-out, transform 2s ease-out;
-  }
-  
-  .animateFadeOut0 {
-    animation: fadeOutUp 2s forwards;
-  }
-  
-  .animateFadeOut1 {
-    animation: fadeOutDown 2s forwards;
-  }
-  
-  .animateFadeOut2 {
-    animation: fadeOutLeft 2s forwards;
-  }
-  
-  .animateFadeOut3 {
-    animation: fadeOutRight 2s forwards;
-  }
 /* xs */
 /* @media (min-width: 475px) {} */
 
 /* sm */
 @media (min-width: 640px) {
-    .maincontentbox{
-        padding-top: 0;
-        gap:3.5rem;
-    }
     
     .content{
         width:100%;
@@ -534,41 +444,102 @@ left:20%;
 
 /* lg */
 @media (min-width: 1024px) {
+
+
+     .maincontentbox{
+         gap:2.2rem
+      }
+
+      #topleftpinksheet{
+      width: 283px;
+      height: 194.78px ;
+
+      }
+
+      #topleftletter{
+      width: 151px;
+      height: 159px;
+      position: absolute;
+      top: 7.94rem;
+      left: -30px;
+
+      }
+
+      #topleftheart{
+      width: 156px;
+      height: 132px;
+      position: absolute;
+      top: -35px;
+      left: 15rem;
+      }
+
+      #toprightletter{
+      width: 186px;
+      height: 202px;
+      position: absolute;
+      top: -5px;
+      right: -72px;
+
+      }
+
+      #xoxobackground{
+      width: 324.652px;
+      height: 282.654px;
+      transform: rotate(-16.707deg);
+      position: absolute;
+      top:31%;
+      right: -117px;   
+      }
+
+      #xoxo{
+      width: 105px;
+      height: 52px;
+      position: absolute;
+      top:50.67%;
+      right: 20px; 
+      transform: rotate(32.465deg);
+
+      }
+
+      #giftbox{
+      width: 210.48px;
+      height: 192px;
+      position: absolute;
+      top: 55.76%;
+      left: -65px;
+
+      }
+
+      #bottomleftbackground{
+      width: 333.1px;
+      height: 140px;
+      position: absolute;
+      bottom: -42px;
+      left: -59px;
+      }
+
+      #bottomrightpinkpaper{
+      width: 333.236px;
+      height: 156px;
+      position: absolute;
+      bottom: -6px;
+      right: -45px;
+
+      }
+
+      #bottomrightroses{
+      width: 165.443px;
+      height: 161px;
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+
+      }
+
     .logowrapper{
         width: 28%;
         height: 240px;
     }
-
-    #topleftpinksheet{
-      width: 232.441px;
-      height: 239.9px;
-  }
-
-  #topleftletter{
-      width: 140.068px;
-      height: 158.068px;
-  }
-
-  #topleftheart{
-        width: 164.901px;
-        height: 152px;
-  }
-
-  #toprightletter{
-      width: 200.976px;
-      height: 221.5px;
-  }
-
-  #giftbox{
-    width: 198.148px;
-    height: 174.32px;
-  }
-
-
-
-
-
-
 
 }
 

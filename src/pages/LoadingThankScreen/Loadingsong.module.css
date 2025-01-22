@@ -1,25 +1,208 @@
 .container{
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('../../assets/Splash screen.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: #D21F32;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content:flex-start;
+    align-items: flex-start;
+    justify-content: center;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes topleftpinksheetslideInDiagonal {
+    0% {
+        transform: translate(-100%, -100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+#topleftpinksheet{
+    position: absolute;
+    top: -5px;
+    left: 0;
+    animation: topleftpinksheetslideInDiagonal 2s ease-out forwards;
+}
+
+
+@keyframes topleftletterslideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#topleftletter{
+    width: 100px;
+    height: 89px;
+    position: absolute;
+    top: 100px;
+    left: -30px;
+    animation: topleftletterslideIn 2s ease-out forwards;
+    
+}
+
+@keyframes topleftheartslideIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+        transform-origin: top center;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#topleftheart{
+    position: absolute;
+    top: -30px;
+    left: 100px;
+    animation: topleftheartslideIn 2s ease-out forwards;
+}
+
+#toprightletter{
+    width: 140px;
+    height: 179px;
+    position: absolute;
+    top: 1px;
+    right: -62px;
+    animation: topleftpinksheetslideInDiagonal 2s ease-out forwards;    
+}
+
+@keyframes xoxobackgroundslideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+#xoxobackground{
+    width: 300.652px;
+    height: 262.654px;
+    transform: rotate(-16.707deg);
+     position: absolute;
+     top:25.6%;
+     right: -117px;     
+     animation: xoxobackgroundslideIn 2s ease-out forwards; 
+}
+
+@keyframes slideInFromBottomCenter {
+    0% {
+        transform: translateY(100%) rotate(32.465deg);
+        opacity: 0;
+        transform-origin: bottom center;
+    }
+    100% {
+        transform: translateY(0) rotate(32.465deg);
+        opacity: 1;
+    }
+}
+
+#xoxo{
+    width: 52px;
+    height: 31px;
+    position: absolute;
+    top:43.67%;
+    right: 20px; 
+    animation: slideInFromBottomCenter 2s ease-out forwards;
+
+}
+
+@keyframes slideInFromBottomCenterGiftbox {
+    0% {
+        transform: translate(50%, 50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+#giftbox{
+        width: 153.48px;
+        height: 126px;
+        position: absolute;
+        top: 60%;
+        left: -59px;
+        animation: slideInFromBottomCenterGiftbox 2s ease-out forwards;
+}
+
+@keyframes bottomleftbackgslideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#bottomleftbackground{
+    width: 243.1px;
+    height: 110px;
+    position: absolute;
+    bottom: -42px;
+    left: -59px;
+    animation: bottomleftbackgslideIn 2s ease-out forwards; 
+}
+
+@keyframes bottomrightslideInDiagonal {
+    0% {
+        transform: translate(100%, 100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+#bottomrightpinkpaper{
+    width: 210.236px;
+    height: 126px;
+    position: absolute;
+    bottom: -6px;
+    right: -45px;
+    animation: bottomrightslideInDiagonal 2s ease-out forwards;
+}
+
+#bottomrightroses{
+    width: 108.443px;
+    height: 96.254px;
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    animation: topleftheartslideIn 2s ease-out forwards;
+
 }
 
 .maincontentbox{
-    padding-top: 3.5rem;
+    position: absolute;
+    top: 15%;
+    left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:center;
-    gap:1rem;
+    gap: 1rem;
+    justify-content:space-between;
 }
 
 .logowrapper{
@@ -30,7 +213,32 @@
 
 .logowrapper>img{
     width: 100%;
-    max-width: 160px;
+    max-width: 120px;
+    animation: logoslideDown 2s ease-out;
+}
+
+@keyframes logoslideDown {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+  @keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+        transform-origin: bottom;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .content{
@@ -46,6 +254,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    animation: slideUp 2s ease-out 2s forwards;
 }
 
 .content #loadingtext{
@@ -70,8 +279,69 @@
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    z-index: 1;
+    animation: slideUp 2s ease-out 2s forwards;
 }
 
+/* .progressContainer{
+    animation: slideUp 2s ease-out 2s forwards;
+} */
+
+@keyframes fadeInAppearEffect {
+    0% {
+      opacity: 0;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+.progressContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInAppearEffect 2s ease-out;
+  }
+  
+  .progressBar {
+    width: 80%;
+    height: 8px;
+    background-color:#F96E74;
+    border-radius: 6px;
+    position: relative;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: width 0.5s ease;
+    text-align: end;
+  }
+  
+  .heart {
+  
+   width: 32px;
+   height: 35px;
+  }
+  
+  .progressText {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #fff;
+  }
 
 .pinkbox>p{
     color: #FFF;
@@ -124,9 +394,101 @@
 
 /* lg */
 @media (min-width: 1024px) {
-    .container{
-        background-image: url('../../assets/Splash sc-desktopbg.png');
-    } 
+
+    .maincontentbox{
+        position: absolute;
+        top: 3%;
+        left: 0;
+    }
+
+#topleftpinksheet{
+    width: 283px;
+    height: 194.78px ;
+   
+}
+
+#topleftletter{
+    width: 151px;
+    height: 159px;
+    position: absolute;
+    top: 7.94rem;
+    left: -30px;
+    
+}
+
+#topleftheart{
+    width: 156px;
+    height: 132px;
+    position: absolute;
+    top: -35px;
+    left: 15rem;
+}
+
+#toprightletter{
+    width: 186px;
+    height: 192px;
+    position: absolute;
+    top: -5px;
+    right: -72px;
+    
+}
+
+#xoxobackground{
+    width: 324.652px;
+    height: 282.654px;
+    transform: rotate(-16.707deg);
+     position: absolute;
+     top:31%;
+     right: -117px;   
+}
+
+#xoxo{
+    width: 105px;
+    height: 52px;
+    position: absolute;
+    top:50.67%;
+    right: 20px; 
+    transform: rotate(32.465deg);
+
+}
+
+
+#giftbox{
+width: 199.48px;
+height: 178px;
+position: absolute;
+top: 55.76%;
+left: -68px;
+
+}
+
+
+#bottomleftbackground{
+    width: 333.1px;
+    height: 140px;
+    position: absolute;
+    bottom: -42px;
+    left: -59px;
+}
+
+#bottomrightpinkpaper{
+    width: 333.236px;
+    height: 156px;
+    position: absolute;
+    bottom: -6px;
+    right: -45px;
+
+}
+
+#bottomrightroses{
+    width: 165.443px;
+    height: 161px;
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+
+}
+
 
     .logowrapper>img{
         max-width:14rem;
@@ -158,17 +520,11 @@
 /* xl */
 @media (min-width: 1280px) {
 
-    .container{
-        background-image: url('../../assets/Splash sc-desktopbg.png');
-    } 
+
 }
 
 /* 2xl */
 @media (min-width: 1536px) {
 
-
-    .container{
-        background-image: url('../../assets/Splash sc-desktopbg.png');
-    } 
 
 }

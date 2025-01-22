@@ -1,5 +1,4 @@
 import style from './Home.module.css';
-import logo from '../../assets/logo.png';
 import topleftpinksheet from '../../assets/pink sheet 2.png';
 import topleftletter from '../../assets/letter 3.png';
 import topleftheart from '../../assets/pink heart 1.png';
@@ -13,15 +12,16 @@ import bottomrightroses from '../../assets/rose 2.png';
 import starticon from '../../assets/Vector.png';
 import { useNavigate } from 'react-router-dom';
 import closeupLetter from "../../assets/Closeup logo-01 3.png";
-import eLetter from "../../assets/e.png"
-import LLetter from "../../assets/L (Stroke).svg"
+import LLetter from "../../assets/L.png"
 import lovesymbol from "../../assets/Closeup logo Variation (3) 1.png"
-import nLetter from "../../assets/n.png"
-import EstrokeLetter from "../../assets/EStroke.png"
-import sLetter from "../../assets/s.png"
+import VLetter from "../../assets/V.png"
+import ELetter from "../../assets/E.png"
+import heartfrequency from "../../assets/Music wave.png";
 import TLetter from "../../assets/T.png"
 import ULetter from "../../assets/u.png"
-import VStrokeLetter from "../../assets/VStroke.png"
+import nLetter from "../../assets/n.png"
+import eLetter from "../../assets/e.png"
+import sLetter from "../../assets/s.png"
 
 
 const Home = () => {
@@ -65,9 +65,13 @@ const Home = () => {
 
          <img id={style.closeuplogoletter} src={closeupLetter} alt="logo" />
          <img id={style.LLetter}      src={LLetter}  alt="logo" />
-         <img id={style.lovesymbol}   src={lovesymbol}  alt="logo" />
-         <img id={style.VLetter}      src={VStrokeLetter}  alt="logo" />
-         <img id={style.ELetter}      src={EstrokeLetter}  alt="logo" />
+
+          <div id={style.heartfrequency} >
+              <img src={heartfrequency}  alt="logo" />
+          </div>
+       
+         <img id={style.VLetter}      src={VLetter}  alt="logo" />
+         <img id={style.ELetter}      src={ELetter}  alt="logo" />
 
          <img id={style.TLetter} src={TLetter} alt="logo" />
          <img id={style.ULetter} src={ULetter} alt="logo" />
