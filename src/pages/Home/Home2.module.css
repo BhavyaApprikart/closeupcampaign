@@ -1,68 +1,26 @@
-.container{
+.container {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
-    box-sizing: border-box;
-}
-
-.backgroundVideo {
+  }
+  
+  .animationContainer {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    overflow: hidden;
+    z-index: 0;
   }
-
-.maincontentbox{
-    /* padding-top: 2.5rem; */
-    /* width: 100%; */
-    /* gap:2.5rem; */
-    position: relative;
-    z-index: 9999;
-}
-
-/* .logowrapper{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.logowrapper>img{
-    width: 100%;
-    max-width: 240px;
-} */
-
-/* .content{
-    width:15rem;
-    overflow: hidden;
-}
-
-.content>p{
-    color: #FFF;
-    text-align: center;
-    font-family: Geologica;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-} */
-
-.btnwrapper{
-    z-index: 999;
+  
+  .btnwrapper {
     position: absolute;
-    bottom:100px;
-    left: 100px;
-    /* margin-top: 4rem; */
-    width:14rem;
+    bottom: 5%; /* Use percentage for better responsiveness */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 14rem;
+    max-width: 90%; /* Ensure it fits on smaller screens */
     height: auto;
     overflow: hidden;
     background-image: url('../../assets/Union.png');
@@ -71,87 +29,43 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:5px;
-
-}
-
-.btnwrapper>button{
+    gap: 5px;
+  }
+  
+  .btnwrapper > button {
     background: none;
     color: #BE1E2D;
     text-align: center;
-    font-family: Geologica;
-    font-size: 18px;
+    font-family: Geologica, sans-serif;
+    font-size: 1rem; /* Use relative units */
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-}
-
-
-
-/* xs */
-/* @media (min-width: 475px) {} */
-
-/* sm */
-@media (min-width: 640px) {
-
-    /* .container{
-        width: 100%;
-        background-image: url('../../assets/Splash sc-desktopbg.png');
-        flex-shrink: 0;
-    }  */
-
-    /* .maincontentbox{
-        padding-top: 0;
-        gap:3.5rem;
-    } */
-
-    /* .logowrapper>img{
-        max-width:20rem;
-    } */
-    
-    /* .content{
-        width:100%;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* For tablets and smaller devices */
+  @media (max-width: 768px) {
+    .btnwrapper {
+      bottom: 7%; /* Adjust position */
+      width: 12rem; /* Reduce size */
     }
-
-    .btnwrapper{
-        margin-top:1rem;
-        width:17rem;
-    } */
-
-
-}
-
-/* md */
-/* @media (min-width: 768px) {} */
-
-/* lg */
-@media (min-width: 1024px) {
-
-    .backgroundVideo {
-        object-fit: fill;
+  
+    .btnwrapper > button {
+      font-size: 0.9rem; /* Adjust font size */
     }
-
-    /* .container{
-        background-image: url('../../assets/Splash screen.png');
-
-    }  */
-
-}
-
-/* xl */
-@media (min-width: 1280px) {
-
-    /* .container{
-        background-image: url('../../assets/Splash sc-desktopbg.png');
-    }  */
-}
-
-/* 2xl */
-@media (min-width: 1536px) {
-
-
-    /* .container{
-        background-image: url('../../assets/Splash sc-desktopbg.png');
-    }  */
-
-}
+  }
+  
+  /* For small mobile devices */
+  @media (max-width: 480px) {
+    .btnwrapper {
+      bottom: 10%; /* Higher on the screen */
+      width: 10rem; /* Further reduce size */
+    }
+  
+    .btnwrapper > button {
+      font-size: 0.8rem; /* Smaller font */
+    }
+  }
+  

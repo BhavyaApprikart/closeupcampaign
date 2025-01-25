@@ -12,7 +12,7 @@ import giftbox from '../../assets/gift (2).png';
 import bottomleftbackground from '../../assets/stroke.png';
 import bottomrightpinkpaper from '../../assets/Cut paper 1.png';
 import bottomrightroses from '../../assets/rose 2.png';
-import whiteheart from '../../assets/white heart 1.png';
+import whiteheart from '../../assets/progressionbarheart.png';
 
 
 const Loadingsong = () => {
@@ -40,12 +40,12 @@ const Loadingsong = () => {
         });
       }, 2000);
   
-      if (progress === 100) {
-        setCurrentText(texts[3]);
-        setTimeout(() => {
-          navigate('/thankyou');
-        }, 2000);
-      }
+      // if (progress === 100) {
+      //   setCurrentText(texts[3]);
+      //   setTimeout(() => {
+      //     navigate('/thankyou');
+      //   }, 2000);
+      // }
   
       return () => {
         clearInterval(timer);

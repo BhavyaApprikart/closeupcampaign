@@ -1,0 +1,41 @@
+.spinner {
+    width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e63946;
+  transform: rotate(-45deg);
+  animation: throb 1s infinite;
+  }
+  
+ 
+.spinner:before,
+.spinner:after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #e63946;
+}
+
+.spinner:before {
+  top: -50px;
+  left: 0;
+}
+
+.spinner:after {
+  left: 50px;
+  top: 0;
+}
+
+@keyframes throb {
+  0%, 100% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-45deg);
+  }
+}

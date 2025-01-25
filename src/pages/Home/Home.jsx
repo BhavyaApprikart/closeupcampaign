@@ -64,7 +64,7 @@ const Home = () => {
     <div className={style.logowrapper}>
 
          <img id={style.closeuplogoletter} src={closeupLetter} alt="logo" />
-         <img id={style.LLetter}      src={LLetter}  alt="logo" />
+         <img id={style.LLetter} src={LLetter}  alt="logo" />
 
           <div id={style.heartfrequency} >
               <img src={heartfrequency}  alt="logo" />
