@@ -37,7 +37,7 @@ const Home = () => {
     });
 
     setTimeout(() => {
-      navigate('/selection');
+      navigate('/home2');
     }, 2000); // Match the duration of the fade-out animation
   };
 
