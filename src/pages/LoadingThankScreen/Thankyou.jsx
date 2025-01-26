@@ -46,7 +46,7 @@ const Thankyou = () => {
     </div>
 
     <div className={style.messagebox}>
-     <p> Your personalized love song, sung by <span id={style.name}>“Dhvani Bhanushali”</span> is ready & will reach your your Whatsapp soon.</p>
+     <p> Your personalized love song, sung by <span id={style.name}>“Dhvani Bhanushali”</span> is ready & will reach your Whatsapp soon.</p>
     </div>
     
     </div>

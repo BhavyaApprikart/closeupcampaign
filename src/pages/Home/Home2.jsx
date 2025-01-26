@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import style from './Home2.module.css';
-import logo from '../../assets/logo.png';
 import starticon from '../../assets/Vector.png';
-import animationData from '../../assets/Splash-sc.json';
-
+import animationData from '../../assets/Splash-sc Initial (1280-720).json';
 import Spinner from './Spinner'; // Import a spinner component
+
 
 const Home2 = () => {
   const navigate = useNavigate();
@@ -42,13 +41,14 @@ const Home2 = () => {
               loop={false}
               autoplay={true}
               onComplete={handleAnimationComplete} // Animation completion logic
+              width={'100%'}
+              height={'100%'}
             />
           </div>
           {isAnimationComplete && ( // Show content only after animation finishes
             <div className={style.content}>
-              <img src={logo} alt="logo" className={style.logo} />
-              <div className={style.btnwrapper}>
-                <button className={style.button} onClick={handleStartClick}>
+              <div className={style.btnwrapper} onClick={handleStartClick}>
+                <button className={style.button} >
                   Start
                 </button>
                 <img src={starticon} alt="start icon" />

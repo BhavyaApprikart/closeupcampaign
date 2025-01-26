@@ -155,8 +155,8 @@ const Selection = () => {
      <label htmlFor="agree">I agree to “Terms & Conditions”.</label>
    </div>
 
-     <div className={style.btnwrapper} >
-       <button className={style.button} onClick={handleGenerateLyrics} > Generate lyrics </button>
+     <div className={style.btnwrapper} onClick={handleGenerateLyrics} >
+       <button className={style.button} > Next </button>
        <img src={starticon} alt="start icon"/>
     </div>
 

@@ -1,5 +1,7 @@
-.spinner {
-    width: 100px;
+.heart {
+  margin: 0;
+  padding: 0;
+  width: 100px;
   height: 100px;
   position: absolute;
   top: 50%;
@@ -8,11 +10,10 @@
   background-color: #e63946;
   transform: rotate(-45deg);
   animation: throb 1s infinite;
-  }
-  
- 
-.spinner:before,
-.spinner:after {
+}
+
+.heart:before,
+.heart:after {
   content: "";
   width: 100px;
   height: 100px;
@@ -21,12 +22,12 @@
   background-color: #e63946;
 }
 
-.spinner:before {
+.heart:before {
   top: -50px;
   left: 0;
 }
 
-.spinner:after {
+.heart:after {
   left: 50px;
   top: 0;
 }

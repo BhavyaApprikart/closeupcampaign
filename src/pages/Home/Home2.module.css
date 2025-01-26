@@ -1,24 +1,43 @@
 .container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
-  
+
   .animationContainer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%; /* Ensure it covers the entire container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 0;
+    
   }
-  
+
+  .animationContainer > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     transform: scale(1.2); 
+    /* object-fit: fill; */
+  }
+
   .btnwrapper {
     position: absolute;
     bottom: 5%; /* Use percentage for better responsiveness */
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    left: 50%; /* Center horizontally */
+    transform:  translateX(-50%);
     width: 14rem;
     max-width: 90%; /* Ensure it fits on smaller screens */
     height: auto;
@@ -30,6 +49,7 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
+    cursor: pointer;
   }
   
   .btnwrapper > button {
@@ -43,8 +63,36 @@
     line-height: normal;
   }
   
-  /* Media Queries for Responsiveness */
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100%) translateX(-50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) translateX(-50%);
+      opacity: 1;
+    }
+  }
+
+  .btnwrapper {
+    animation: slideUp 0.5s ease-out;
+  }
   
+  /* Media Queries for Responsiveness */
+
+  /* xs */
+  @media (min-width: 475px) {
+    
+  }
+  
+  /* sm */
+  @media (min-width: 640px) {
+
+
+  }
+
+ 
+
   /* For tablets and smaller devices */
   @media (max-width: 768px) {
     .btnwrapper {
@@ -57,15 +105,13 @@
     }
   }
   
-  /* For small mobile devices */
-  @media (max-width: 480px) {
-    .btnwrapper {
-      bottom: 10%; /* Higher on the screen */
-      width: 10rem; /* Further reduce size */
+  /* xl */
+@media (min-width: 1280px) {
+   .container{
+       
     }
-  
-    .btnwrapper > button {
-      font-size: 0.8rem; /* Smaller font */
-    }
-  }
-  
+
+
+
+
+}

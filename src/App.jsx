@@ -11,8 +11,8 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/home2' element={<Home2 />} />
+      <Route path='/home' element={<Home />} />
+      <Route path='/' element={<Home2 />} />
       <Route path='/register' element={<Register />} />
       <Route path='/selection' element={<Selection />} />
       <Route path='/loadingsong' element={<Loadingsong />} />
