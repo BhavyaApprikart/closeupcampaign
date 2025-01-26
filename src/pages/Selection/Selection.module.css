@@ -373,6 +373,16 @@
 
 @media screen and (min-width: 426px) and (max-width:539px) {
 
+  .maincontentbox{
+    padding-top: 1.5rem;
+    gap:1.5rem;
+
+}
+
+.formbox{
+  gap: 1.5rem;
+}
+
 
 
 
