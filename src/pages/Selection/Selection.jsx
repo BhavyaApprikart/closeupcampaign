@@ -84,22 +84,6 @@ const Selection = () => {
     { value: 'Lips', label: 'Lips' },
   ];
 
-  // const handlenameinpBlur = (e) => {
-  //     const newErrors = {};
-  //   if (!nameRegex.test(e.target.value)) {
-  //         newErrors.friendname = `Your name must be between 3-10 characters. If it's longer, please use a nickname.`;  
-  //   } 
-  //   else {
-  //         newErrors.friendname = '';
-  //   }
-
-  //   if (Object.keys(newErrors).length > 0) {
-  //         setErrors(newErrors);
-  //    }else{
-  //         setErrors(null);
-  //   }
-
-  // };
 
   return (
     <div className={style.container}>

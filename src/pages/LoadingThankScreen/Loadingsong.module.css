@@ -6,8 +6,8 @@
     background: #D21F32;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
@@ -25,8 +25,10 @@
 }
 
 #topleftpinksheet{
+    width: 119.183px;
+    height: 113px;
     position: absolute;
-    top: -5px;
+    top: -6px;
     left: 0;
     animation: topleftpinksheetslideInDiagonal 2s ease-out forwards;
 }
@@ -45,9 +47,9 @@
 
 #topleftletter{
     width: 100px;
-    height: 89px;
+    height: 97px;
     position: absolute;
-    top: 100px;
+    top: 65px;
     left: -30px;
     animation: topleftletterslideIn 2s ease-out forwards;
     
@@ -66,17 +68,19 @@
 }
 
 #topleftheart{
+    width: 83.511px;
+    height: 71.285px;
     position: absolute;
-    top: -30px;
-    left: 100px;
+    top: -20px;
+    left: 90px;
     animation: topleftheartslideIn 2s ease-out forwards;
 }
 
 #toprightletter{
     width: 140px;
-    height: 179px;
+    height: 169px;
     position: absolute;
-    top: 1px;
+    top: -10px;
     right: -62px;
     animation: topleftpinksheetslideInDiagonal 2s ease-out forwards;    
 }
@@ -92,11 +96,11 @@
     }
 }
 #xoxobackground{
-    width: 300.652px;
-    height: 262.654px;
+    width: 262.652px;
+    height: 252.654px;
     transform: rotate(-16.707deg);
      position: absolute;
-     top:25.6%;
+     top:26.6%;
      right: -117px;     
      animation: xoxobackgroundslideIn 2s ease-out forwards; 
 }
@@ -114,11 +118,11 @@
 }
 
 #xoxo{
-    width: 52px;
-    height: 31px;
+    width: 45px;
+    height: 26px;
     position: absolute;
     top:43.67%;
-    right: 20px; 
+    right: 14px; 
     animation: slideInFromBottomCenter 2s ease-out forwards;
 
 }
@@ -138,7 +142,7 @@
         width: 153.48px;
         height: 126px;
         position: absolute;
-        top: 60%;
+        top: 50%;
         left: -59px;
         animation: slideInFromBottomCenterGiftbox 2s ease-out forwards;
 }
@@ -158,7 +162,7 @@
     width: 243.1px;
     height: 110px;
     position: absolute;
-    bottom: -42px;
+    bottom:30px;
     left: -59px;
     animation: bottomleftbackgslideIn 2s ease-out forwards; 
 }
@@ -178,7 +182,7 @@
     width: 210.236px;
     height: 126px;
     position: absolute;
-    bottom: -6px;
+    bottom: 50px;
     right: -45px;
     animation: bottomrightslideInDiagonal 2s ease-out forwards;
 }
@@ -187,7 +191,7 @@
     width: 108.443px;
     height: 96.254px;
     position: absolute;
-    bottom: 10px;
+    bottom: 60px;
     right: 12px;
     animation: topleftheartslideIn 2s ease-out forwards;
 
@@ -195,7 +199,7 @@
 
 .maincontentbox{
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 0;
     width: 100%;
     display: flex;
@@ -213,7 +217,7 @@
 
 .logowrapper>img{
     width: 100%;
-    max-width: 120px;
+    max-width: 180px;
     animation: logoslideDown 2s ease-out;
 }
 
@@ -222,6 +226,11 @@
       transform: translateY(-100%);
       opacity: 0;
     }
+
+    50% {
+        transform: translateY(-50%);
+        opacity: 0;
+      }
     100% {
       transform: translateY(0);
       opacity: 1;
@@ -233,7 +242,6 @@
     0% {
         transform: translateY(100%);
         opacity: 0;
-        transform-origin: bottom;
     }
     100% {
         transform: translateY(0);
@@ -242,7 +250,7 @@
 }
 
 .content{
-    width:18rem;
+    width:15rem;
     overflow: hidden;
 }
 
@@ -250,11 +258,11 @@
     color: #FFF;
     text-align: center;
     font-family: Geologica;
-    font-size: 20px;
+    font-size: 19px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    animation: slideUp 2s ease-out 2s forwards;
+    animation: slideUp 1.5s ease-out 1.5s forwards;
 }
 
 .content #loadingtext{
@@ -262,15 +270,16 @@
     color: #FFF;
     text-align: center;
     font-family: Geologica;
-    font-size: 12px;
+    font-size: 11.75px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
 }
 
 .pinkbox{
-    width:75%;
-    height: 14rem;
+    margin-top: 0.5rem;
+    width:69%;
+    height: 10.98rem;
     background-image: url('../../assets/Pink paper cut 2.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -278,10 +287,10 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 1rem;
+    padding:0.8rem;
     overflow: hidden;
     z-index: 1;
-    animation: slideUp 2s ease-out 2s forwards;
+    animation: slideUp 1.5s ease-out 1.5s forwards;
 }
 
 /* .progressContainer{
@@ -315,8 +324,8 @@
   }
   
   .progressBar {
-    width: 68%;
-    height: 8.98px;
+    width: 62%;
+    height: 6.25px;
     background-color:#FFFFFF52;
     border-radius: 173.065px;
     background: rgba(255, 255, 255, 0.32);
@@ -325,24 +334,25 @@
   }
   
   .progress {
+    width: 100%;
     height: 100%;
     background-color: #fff;
     border-radius: 10px;
     display: flex;
-    align-items: center;
+    align-items:  flex-end;
     justify-content: flex-end;
     transition: width 0.5s ease;
     text-align: end;
   }
   
   .heart {
-    display: flex;
-    width: 26.45px;
-    height: 30.286px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+        display: flex;
+        width: 25.25px;
+        height: 16.25px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 8px;
   }
   
   .progressText {
@@ -357,9 +367,10 @@
   }
 
 .pinkbox>p{
+    width: 100%;
     color: #FFF;
     font-family: Geologica;
-    font-size: 1.1rem;
+    font-size: 17px;
     font-style: normal;
     font-weight: 400;
     line-height:1rem;
@@ -368,7 +379,7 @@
 #splfeature{
     color: #131313;
     font-family: Geologica;
-    font-size: 1rem;
+    font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 1rem;
@@ -388,6 +399,16 @@
 
 /* xs */
 /* @media (min-width: 475px) {} */
+
+
+
+
+
+
+
+
+
+
 
 /* sm */
 @media (min-width: 640px) {
@@ -456,13 +477,12 @@
 }
 
 #xoxo{
-    width: 105px;
-    height: 52px;
+    width: 89px;
+    height: 40px;
     position: absolute;
     top:50.67%;
     right: 20px; 
     transform: rotate(32.465deg);
-
 }
 
 
@@ -539,5 +559,150 @@ left: -68px;
 /* 2xl */
 @media (min-width: 1536px) {
 
+
+}
+
+
+/* moto g34 */
+@media screen and (min-width: 426px) and (max-width:539px){
+
+    #topleftpinksheet{
+        width: 203.183px;
+        height: 179.67px;
+    }
+    
+    #topleftletter{
+        width: 140px;
+        height: 132px; 
+    }
+    
+    #topleftheart{
+        width: 123.511px;
+        height: 111.285px;
+        position: absolute;
+        top: -28px;
+        left: 150px;
+    }
+    
+    #toprightletter{
+        width: 165px;
+        height: 199px;
+        position: absolute;
+        top: -10px;
+        right: -62px;  
+    }
+    
+    #xoxobackground{
+        width: 282.652px;
+        height: 262.654px;
+        transform: rotate(-16.707deg);
+         position: absolute;
+         top:26.6%;
+         right: -117px;     
+    }
+    
+    #xoxo{
+        width: 45px;
+        height: 26px;
+        position: absolute;
+        top:39.67%;
+        right: 14px; 
+        transform: rotate(32.465deg);
+    
+    }
+    
+    #giftbox{
+            width: 186.48px;
+            height: 146px;
+            position: absolute;
+            top: 48%;
+            left: -59px;
+    }
+    
+    #bottomleftbackground{
+        width: 263.1px;
+        height: 121px;
+        position: absolute;
+        bottom:30px;
+        left: -59px;
+    }
+    
+    #bottomrightpinkpaper{
+        width: 243.236px;
+        height: 136px;
+        position: absolute;
+        bottom: 50px;
+        right: -45px;
+    }
+    
+    #bottomrightroses{
+        width: 108.443px;
+        height: 96.254px;
+        position: absolute;
+        bottom: 70px;
+        right: 12px;
+    
+    }
+
+.logowrapper>img{
+    width: 100%;
+    max-width: 162px;
+    animation: logoslideDown 2s ease-out;
+}
+
+.content{
+    width:15rem;
+    overflow: hidden;
+}
+
+.content>p{
+    color: #FFF;
+    text-align: center;
+    font-family: Geologica;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    animation: slideUp 1.5s ease-out 1.5s forwards;
+}
+
+.content #loadingtext{
+    margin-top: 1rem;
+    color: #FFF;
+    text-align: center;
+    font-family: Geologica;
+    font-size: 11.75px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.pinkbox{
+    margin-top: 5rem;
+    width:64.25%;
+    height: 14.75rem;
+    background-image: url('../../assets/Pink paper cut 2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
+    padding:0.8rem;
+    overflow: hidden;
+    z-index: 1;
+    animation: slideUp 1.5s ease-out 1.5s forwards;
+}
+
+
+.pinkbox>p{
+    width: 85%;
+    color: #FFF;
+    font-family: Geologica;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height:1.5rem;
+}
 
 }

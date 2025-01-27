@@ -1,13 +1,8 @@
 .container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      box-sizing: border-box;
   }
 
   .animationContainer {
@@ -15,31 +10,25 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Ensure it covers the entire container */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
     z-index: 0;
-    
   }
 
-  .animationContainer > div {
+  .animationContainer>svg {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     transform: scale(1.2); 
-    /* object-fit: fill; */
+    object-fit: contain; 
+    preserveAspectRatio: xMidYMid meet;
+
   }
 
   .btnwrapper {
     position: absolute;
-    bottom: 5%; /* Use percentage for better responsiveness */
+    bottom: 15%; /* Use percentage for better responsiveness */
     left: 50%; /* Center horizontally */
     transform:  translateX(-50%);
-    width: 14rem;
-    max-width: 90%; /* Ensure it fits on smaller screens */
+    width: 15rem;
+    max-width: 100%; /* Ensure it fits on smaller screens */
     height: auto;
     overflow: hidden;
     background-image: url('../../assets/Union.png');
@@ -48,7 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 0px;
     cursor: pointer;
   }
   
@@ -56,8 +45,8 @@
     background: none;
     color: #BE1E2D;
     text-align: center;
-    font-family: Geologica, sans-serif;
-    font-size: 1rem; /* Use relative units */
+    font-family: Geologica;
+    font-size: 1.25rem; /* Use relative units */
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -78,40 +67,101 @@
     animation: slideUp 0.5s ease-out;
   }
   
-  /* Media Queries for Responsiveness */
 
-  /* xs */
-  @media (min-width: 475px) {
-    
+  .fullScreenAnimation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    object-fit: contain; 
   }
   
-  /* sm */
-  @media (min-width: 640px) {
 
+
+  /* Media Queries for Responsiveness */
+  @media (min-width: 375px) {
+    
+    .btnwrapper {
+      bottom: 16%;
+      width: 17rem; 
+    }
+  
+    .btnwrapper > button {
+      font-size: 0.75rem; /* Adjust font size */
+    }
 
   }
 
- 
-
-  /* For tablets and smaller devices */
-  @media (max-width: 768px) {
+  /* xs */
+  @media screen and (min-width: 390px) and (min-width: 475px) {
+    
     .btnwrapper {
-      bottom: 7%; /* Adjust position */
-      width: 12rem; /* Reduce size */
+      bottom: 15%;
+      width: 17rem; 
     }
   
     .btnwrapper > button {
       font-size: 0.9rem; /* Adjust font size */
     }
+
+  }
+  
+  /* sm */
+  @media (min-width: 640px) {
+    .btnwrapper {
+      bottom: 15%;
+      width: 17rem; 
+    }
+  
+    .btnwrapper > button {
+      font-size: 1rem; /* Adjust font size */
+    }
+
+  }
+
+/* moto g34 */
+@media screen and (min-width: 426px) and (max-width:539px){
+
+  .btnwrapper {
+    bottom: 25% !important;
+    width: 17rem; 
+  }
+
+}
+
+
+  /* For tablets and smaller devices */
+  @media (max-width: 768px) {
+    .btnwrapper {
+      bottom: 15%;
+      width: 17rem; 
+    }
+  
+    .btnwrapper > button {
+      font-size: 1rem; /* Adjust font size */
+    }
+
+    .animationContainer > svg {
+      object-fit: contain; /* Ensure entire SVG is visible */
+      height: 100%; /* Use full height */
+      width: auto; /* Let width adjust based on aspect ratio */
+    }
   }
   
   /* xl */
-@media (min-width: 1280px) {
-   .container{
-       
-    }
+@media (min-width: 1280px) and (max-height: 720px){
 
+  /* .btnwrapper {
+    bottom: 10%;
+    width: 17rem; 
+  } */
 
-
+  .animationContainer > svg {
+    height: auto; /* Allow height to adjust automatically */
+    max-height: 100vh; /* Prevent cropping on larger screens */
+    max-width: 100%; /* Ensure proper scaling */
+  }
 
 }

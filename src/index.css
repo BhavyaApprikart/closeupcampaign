@@ -19,17 +19,20 @@
 }
 
 * {
-  margin: 0;
-  line-height: calc(1em + 0.5rem);
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   box-sizing: border-box;
 }
 
 html {
+  overflow: hidden;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Sora", sans-serif;
-  background: #FFF;
+  overflow: hidden;
+  background: #D21F32;
   font-style: normal;
 }
 

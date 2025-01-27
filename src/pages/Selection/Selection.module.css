@@ -8,13 +8,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     box-sizing: border-box;
     position: relative;
+   overflow: hidden !important;
 }
 
 .maincontentbox{
-    padding-top: 1.5rem;
+    margin-top: 1rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -39,7 +40,7 @@
 
 .logowrapper>img{
     width: 100%;
-    max-width: 120px;
+    max-width: 142px;
     animation: imageslideDown 2s ease-out;
 }
 
@@ -56,22 +57,22 @@
 
 .singerdesp{
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.65rem;
 }
 
-
 .singercard{
-    width: 6.85rem;
-    height: 6.85rem;
+    width: 7.85rem;
+    height: 7.85rem;
     margin-top: -1rem;
     /* background-color: black; */
     background-image: url('../../assets/cd disc gif.gif');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     overflow: hidden;
     display: flex;
@@ -82,7 +83,7 @@
 
 @keyframes singercardpopup {
     0% {
-      transform: scale(0.1);
+      transform: scale(0);
       opacity: 0;
     }
     100% {
@@ -94,8 +95,8 @@
 .singercard>img{
     margin-top: 0.85rem;
     margin-right: 5px;
-    width: 4.2rem;
-    height: 4.2rem;
+    width: 4.12rem;
+    height: 4.12rem;
 
 }
 .singerdesp>p {
@@ -106,8 +107,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px; /* 100% */
-    
+    line-height: 1.25rem; /* 100% */ 
 }
 
 #singername {
@@ -175,7 +175,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-  
+    padding-left: 1rem;
 }
 
 .forminputbox select option {
@@ -186,12 +186,14 @@
     color: #131313;
   }
 
+
 .forminputbox>input:focus, .forminputbox>select:focus {
     outline: none;
     border: none !important;
 }
 
 .forminputbox>input::placeholder,select::placeholder{
+
     color: #B80000;
     font-family: Geologica;
     font-size: 18px;
@@ -209,7 +211,7 @@
     color: #fff;
     text-align: center;
     font-family: Geologica;
-    font-size: 13.6px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -242,7 +244,7 @@
     font-family: Geologica;
     font-size: 13.6px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 800;
     line-height: normal;
   }
   
@@ -254,7 +256,7 @@
     font-family: Geologica;
     font-size: 13.6px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 800;
     line-height: normal;
   }
   
@@ -266,7 +268,7 @@
     width: 6px;
     height: 12px;
     border: solid #D21F32;;
-    border-width: 0 1.33px 1.33px 0;
+    border-width: 0 2.2px 2.2px 0;
     transform: rotate(45deg);
   }
 
@@ -284,7 +286,7 @@
 
   @keyframes slideUpbtnwrapperdesktop {
     0% {
-      transform: translateY(20px);
+      transform: translateY(100%);
       opacity: 0;
     }
     100% {
@@ -303,7 +305,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:5px;
+    gap:0;
     cursor: pointer;
     animation: slideUpbtnwrapper 2s ease-out;
 }
@@ -321,7 +323,7 @@
 
 .errordisplay{
         position: absolute;
-        bottom: 1rem;
+        bottom: 4rem;
         left: auto;
         z-index: 1;
        width:20rem;
@@ -371,60 +373,280 @@
 
 
 
+
+
+/*iPhone 7 / 13 mini */
+@media screen and (min-width: 375px) {
+  .container{
+    display: flex;
+    justify-content:flex-start;
+    gap:0rem;
+}
+
+.logowrapper>img{
+  width: 100%;
+  max-width: 142px;
+}
+
+.maincontentbox{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.singercard{
+  margin-top: -2rem;
+  width: 9.25rem;
+  height:9.25rem;
+}
+
+.singercard>img{   
+  margin-top: 0.87rem;
+  margin-right: 4px;
+   width: 4.27rem !important;
+   height: 4.27rem !important;
+}
+
+.singerdesp>p {
+  width: 85%;
+  font-size: 17px;
+  line-height: 1.3rem;
+}
+
+#singername {
+  font-size: 17px;
+}
+
+.forminputbox>input,select{
+  font-size: 19px;
+  padding-left: 1rem;
+}
+
+.forminputbox>input::placeholder,select::placeholder{
+ font-size: 19px;
+}
+
+.forminputbox select {
+font-size: 19px;
+}
+
+.forminputbox select option {
+font-size: 19px;
+}
+
+ .formbox{
+   width:22rem;
+   gap: 0.5rem;
+ }
+
+ .forminputbox{
+       animation: slideUpbtnwrapper 2s ease-out;
+ }
+
+ .formcheckbox {
+   margin-top: 0.5rem;
+   margin-left: -1rem;
+   gap: 0rem;
+   color: #fff;
+   font-size: 1rem;
+ }
+
+ .btnwrapper{
+   width:16rem;
+   height:auto;
+   overflow: hidden;
+   gap:0;
+   cursor: pointer;
+   animation: slideUpbtnwrapper 2s ease-out;
+}
+
+.btnwrapper>button{
+   font-size: 19px;
+}
+
+
+}
+
+
+/* moto g34 */
 @media screen and (min-width: 426px) and (max-width:539px) {
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap:0.5rem;
+}
+
+  .logowrapper>img{
+    width: 100%;
+    max-width: 180px;
+}
 
   .maincontentbox{
-    padding-top: 1.5rem;
-    gap:1.5rem;
+    margin-top:1rem;
+    width: 100%;
+    display: flex;
+    gap:1rem;
+    align-items: center;
+  }
 
+  .singercard{
+    margin-top: -2.5rem;
+    width: 12rem;
+    height:12rem;
+  }
+
+  .singercard>img{   
+    margin-top: 0.8rem;
+    margin-right: 4px;
+   max-width: 9.2rem !important;
+   max-height: 9.2rem !important;
+}
+  .singerdesp>p {
+    margin-top:2rem;
+    width: 85%;
+    font-size: 19px;
+    line-height: 1.5rem;
+  }
+
+  #singername {
+      font-size: 21px;
+  }
+
+  .forminputbox>input,select{
+     font-size: 22px;
+     padding-left: 1rem;
+  }
+
+  .forminputbox>input::placeholder,select::placeholder{
+    font-size: 22px;
 }
 
-.formbox{
-  gap: 1.5rem;
+.forminputbox select {
+  font-size: 22px;
 }
 
-
-
-
+.forminputbox select option {
+  font-size: 22px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* xs */
-/* @media (min-width: 475px) {} */
-
-/* sm */
-@media (min-width: 640px) {
-    .logowrapper>img{
-        max-width:11.75rem;
+    .formbox{
+      width:24rem;
+      gap: 1.5rem;
     }
-    
+
+    .forminputbox{
+          animation: slideUpbtnwrapper 2s ease-out;
+    }
+
+
+    .formcheckbox {
+      margin-top: 2.5rem;
+      margin-left: -3rem;
+      gap: 0rem;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+
+    .btnwrapper{
+      width:17rem;
+      height:auto;
+      overflow: hidden;
+      gap:0;
+      cursor: pointer;
+      animation: slideUpbtnwrapper 2s ease-out;
+  }
+  
+  .btnwrapper>button{
+      font-size: 26px;
+  }
+
+}
+
+
+/* redmi */
+@media only screen and (-webkit-min-device-pixel-ratio: 2.75) {
+
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap:0.5rem;
+}
+
+  .logowrapper>img{ 
+    width: 100%;
+    max-width: 180px;
+}
+
+  .maincontentbox{
+    margin-top:-1.2rem;
+    width: 100%;
+    display: flex;
+    gap:1rem;
+    align-items: center;
+  }
+
+  .singerdesp>p {
+    margin-top:0rem;
+    width: 90%;
+    font-size: 16px;
+    line-height: 1.5rem;
+  }
+
+  .formcheckbox {
+    margin-top: 2.5rem;
+    margin-left: -3rem;
+    gap: 0rem;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+
+}
+
+/* oneplus */
+@media only screen and (-webkit-min-device-pixel-ratio: 2.625) {
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap:0.5rem;
+}
+
+  .logowrapper>img{
+    width: 100%;
+    max-width: 140px;
+}
+
+  .maincontentbox{
+    margin-top:0.5rem;
+    width: 100%;
+    display: flex;
+    gap:1rem;
+    align-items: center;
+  }
+
+  .singercard{
+    margin-top: -2rem;
+  }
+
+  .formbox{
+    width:22rem;
+    gap: 0.5rem;
+  }
+
+  .formcheckbox {
+    margin-top: 2.5rem;
+    margin-left: -3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    color: #fff;
+    font-size: 14px;
+  }
 
 
 }
@@ -439,16 +661,16 @@
     } 
 
     .singercard{
-        width: 6.75rem;
-        height: 6.75rem;
+        width: 9.75rem;
+        height: 9.75rem;
         margin-top: -2rem;
     }
     
     .singercard>img{   
          margin-top: 0.8rem;
         margin-right: 4px;
-        max-width: 4rem;
-        max-height: 4rem;
+        max-width: 6.4rem;
+        max-height: 6.4rem;
     }
     .singerdesp>p {
         width: 28rem;  
@@ -460,9 +682,35 @@
         height:3.2rem;
     }
 
+    .formcheckbox {
+      animation: fadeInAppearEffect 2s ease-out;
+      margin-top: 2.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: #fff;
+      text-align: center;
+      font-family: Geologica;
+      font-size: 13.6px;
+    }
+    .formbox{
+      gap: 0.5rem;
+  }
+
     .btnwrapper{
          animation: slideUpbtnwrapperdesktop 2s ease-out;
     }
+
+    .btnwrapper>button{
+      font-size: 18px;
+  }
+
+  .errordisplay{
+    position: absolute;
+    bottom: 2rem;
+    left: auto;
+}
 
 }
 

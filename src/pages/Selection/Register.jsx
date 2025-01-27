@@ -20,7 +20,7 @@ const Register = () => {
   const [errors, setErrors] = useState({});
   const otpRegex = /^\d{4}$/;
   const nameRegex =  /^[a-zA-Z]{3,10}$/;
-  const indianPhoneNumberRegex = /^[789]\d{9}$/;
+  const indianPhoneNumberRegex = /^[6-9]\d{9}$/;
 
   const handleOTPButtonClick = async () => {
 
@@ -146,7 +146,7 @@ const handleerrorboxclick = () => {
      {  
       showotpscreen ? 
       <div className={style.formbox}>
-      <div className={style.forminputbox}>
+      <div className={style.forminputbox} style={{marginTop:'1rem'}}>
       <input placeholder='Enter OTP' 
           type="text"
           name="userotp"               
@@ -159,7 +159,7 @@ const handleerrorboxclick = () => {
       <div className={style.formbox}>
 
       <div className={style.forminputbox}>
-       <input placeholder='Enter name' 
+       <input placeholder='Enter Name' 
        type="text"
        name="username"               
        value={username} 

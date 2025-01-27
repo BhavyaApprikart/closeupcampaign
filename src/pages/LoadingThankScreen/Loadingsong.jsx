@@ -77,7 +77,7 @@ const Loadingsong = () => {
      </div>
 
     <div className={style.content}>
-        <p>Here are your selections</p>
+           <p>Here are your selections</p>
 
         <div className={style.progressContainer}>
         <div className={style.progressBar}>
