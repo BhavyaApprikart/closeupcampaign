@@ -116,11 +116,11 @@ const handleRegButtonClick = async () => {
     }
 
      if (!document.getElementById('agree1').checked) {
-      newErrors.agree = 'You must agree to the terms and conditions.';
+      newErrors.agree1 = 'You must agree to the terms and conditions.';
      }
 
      if (!document.getElementById('agree2').checked) {
-       newErrors.agree = 'You must agree to the terms and conditions.';
+       newErrors.agree2 = 'You must agree to the terms and conditions.';
      }
 
     if (Object.keys(newErrors).length > 0) {
@@ -144,7 +144,7 @@ const handleRegButtonClick = async () => {
                             });
                      }      
                      else{
-                         setErrors({ otp: 'Invalid OTP. Please try again.' });
+                         setErrors({ userotp: 'Invalid OTP. Please try again.' });
                      }
 
                } catch(error) {
@@ -272,6 +272,8 @@ const handleerrorboxclick = () => {
             {errors.username && <span>{errors.username}</span>}
             {errors.usermobileno && <span>{errors.usermobileno}</span>}
             {errors.userotp && <span>{errors.userotp}</span>}
+            {errors.agree1 && <span>{errors.agree1}</span>}
+            {errors.agree2 && <span>{errors.agree2}</span>}
             {errors.errorresponse && <span>{errors.errorresponse}</span>}
           </div>
         </div>
