@@ -1,11 +1,8 @@
 import style from './Register.module.css';
-import logo from '../../assets/logo.png';
-import starticon from '../../assets/Vector.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import erroricon from '../../assets/radix-icons_cross-circled.svg';
 
 
 const Register = () => {
@@ -22,16 +19,58 @@ const Register = () => {
   const nameRegex =  /^[a-zA-Z]{3,10}$/;
   const indianPhoneNumberRegex = /^[6-9]\d{9}$/;
 
+   // Asset states
+ const [logo, setLogo] = useState('');
+ const [startIcon, setStartIcon] = useState('');
+ const [errorIcon, setErrorIcon] = useState('');
+ // Asset loading
+ useEffect(() => {
+  const loadAssets = async () => {
+    try {
+      // Asset URLs
+      const logoUrl =
+        'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/logo.png';
+      const startIconUrl =
+        'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Vector.png';
+      const errorIconUrl =
+        'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/radix-icons_cross-circled.svg';
+
+      // Set asset states
+      setLogo(logoUrl);
+      setStartIcon(startIconUrl);
+      setErrorIcon(errorIconUrl);
+    } catch (error) {
+      console.error('Failed to load assets:', error);
+    }
+  };
+
+  loadAssets();
+}, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      document.documentElement.style.setProperty(
+        '--app-height',
+        `${window.innerHeight}px`
+      );
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Call on initial load
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleOTPButtonClick = async () => {
 
     const newErrors = {};
 
     if (!nameRegex.test(username)) {
-        newErrors.username = `Your name must be between 3-10 characters. If it's longer, please use a nickname.`;
+        newErrors.username = `Name must be between 3-10 characters. If it's longer, please use a nickname. Name should not include spaces, special characters or digits.`;
     }
 
     if (!username) {
-      newErrors.friendname = `Your name must be between 3-10 characters. If it's longer, please use a nickname.`;  
+      newErrors.friendname = `Name must be between 3-10 characters. If it's longer, please use a nickname. Name should not include spaces, special characters or digits.`;  
     }
 
     if (!usermobileno) {
@@ -131,12 +170,12 @@ const handleerrorboxclick = () => {
 };
 
   return (
-    <div className={style.container}>
+    <div className={style.container}  style={{ height: 'var(--app-height)' }} >
     
     <div className={style.maincontentbox}>
 
      <div className={style.logowrapper}>
-         <img src={logo} alt="logo" /> 
+          { logo && <img src={logo} alt="logo" /> }
      </div>
 
      <div className={style.singerdesp}>
@@ -146,7 +185,7 @@ const handleerrorboxclick = () => {
      {  
       showotpscreen ? 
       <div className={style.formbox}>
-      <div className={style.forminputbox} style={{marginTop:'1rem'}}>
+      <div className={style.forminputbox} style={{marginTop:'1rem',marginBottom:'2rem'}}>
       <input placeholder='Enter OTP' 
           type="text"
           name="userotp"               
@@ -179,7 +218,7 @@ const handleerrorboxclick = () => {
 
       <div className={style.btnwrapper}  onClick={showotpscreen ? handleRegButtonClick : handleOTPButtonClick} >
       <button className={style.button} > { showotpscreen ? "Register" : "Send OTP"}  </button>
-      <img src={starticon} alt="start icon"/>
+           { startIcon && <img src={startIcon} alt="start icon"/>}
       </div>
 
 
@@ -188,7 +227,7 @@ const handleerrorboxclick = () => {
         && (errors.username || errors.usermobileno || errors.userotp || errors.errorresponse  )
         && (
         <div className={style.errordisplay} onClick={handleerrorboxclick} >
-          <img src={erroricon} alt="Error icon" />
+               { errorIcon && <img src={errorIcon} alt="Error icon" />}
           <div className={style.errorwrapper}>
             <h3>Error</h3>
             {errors.username && <span>{errors.username}</span>}
