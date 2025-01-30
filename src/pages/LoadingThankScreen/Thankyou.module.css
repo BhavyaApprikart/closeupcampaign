@@ -1,548 +1,131 @@
-.container{
+.container {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Ensure animation fills the entire screen */
+  .animationContainer {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .animationContainer svg{
+    object-fit: contain;
+  }
+  
+  
+  .fullScreenAnimation {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    background: #D21F32;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-}
-
-#topleftpinksheet{
-    width: 119.183px;
-    height: 113px;
-    position: absolute;
-    top: -6px;
-    left: 0;
-}
-
-
-#topleftletter{
-    width: 100px;
-    height: 97px;
-    position: absolute;
-    top: 65px;
-    left: -30px;
-    
-}
-
-#topleftheart{
-    width: 83.511px;
-    height: 71.285px;
-    position: absolute;
-    top: -20px;
-    left: 90px;
-}
-
-#toprightletter{
-    width: 140px;
-    height: 169px;
-    position: absolute;
-    top: -10px;
-    right: -62px;  
-}
-
-#xoxobackground{
-    width: 262.652px;
-    height: 252.654px;
-    transform: rotate(-16.707deg);
-     position: absolute;
-     top:26.6%;
-     right: -117px;     
-}
-
-#xoxo{
-    width: 45px;
-    height: 26px;
-    position: absolute;
-    top:43.67%;
-    right: 14px; 
-    transform: rotate(32.465deg);
-
-}
-
-#giftbox{
-        width: 153.48px;
-        height: 126px;
-        position: absolute;
-        top: 50%;
-        left: -59px;
-}
-
-#bottomleftbackground{
-    width: 243.1px;
-    height: 110px;
-    position: absolute;
-    bottom:30px;
-    left: -59px;
-}
-
-#bottomrightpinkpaper{
-    width: 210.236px;
-    height: 126px;
-    position: absolute;
-    bottom: 50px;
-    right: -45px;
-}
-
-#bottomrightroses{
-    width: 108.443px;
-    height: 96.254px;
-    position: absolute;
-    bottom: 60px;
-    right: 12px;
-
-}
-
-
-.maincontentbox{
-    position: absolute;
-    top: 10%;
-    left: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.75rem;
-    justify-content:space-between;
-}
-
-.logowrapper{
-    width: 100%;
+    z-index: 9999;
     display: flex;
     justify-content: center;
-}
-
-.logowrapper>img{
-    width: 100%;
-    max-width: 142px;
-}
-
-  @keyframes slideUp {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
-        transform-origin: bottom;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.content{
-    margin-top: -3rem;
-    margin-bottom: 2rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    animation: slideUp 2s ease-out forwards;
-}
-
-.content>img{
-    width: 100%;
-    max-width: 10.75rem;
-    height: 12.25rem;
-    transform: rotate(-11.733deg);
-}
-
-.thankyoutextbg{
-    margin-top: -2.8rem;
-    width: 160.502px;
-    height: 54.008px;
-    transform: rotate(-3.4deg);
-    flex-shrink: 0;
-    background-image: url('../../assets/pink text bg 2.png');
-    background-size: cover;
+    align-items: center; 
+    overflow: hidden;
+  }
+  
+  
+  
+  /* Button Wrapper to appear above animation */
+  .btnwrapper {
+    position: absolute;
+    bottom: 10.75%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16rem;
+    height: 42px;
+    background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Union.png');
+    background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
- 
- #thankyoutext{
-    margin-top: 10px;
-    color: #D21F32;
-    text-align: center;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer;
+    z-index: 2; /* Ensure button appears above animation */
+  }
+  
+  /* Button Styling */
+  .btnwrapper > button {
+    background: none;
+    color: #BE1E2D;
     font-family: Geologica;
-    font-size: 1.1rem;
-    font-style: normal;
+    font-size: 1rem;
     font-weight: 600;
-    line-height: 18.63px; 
-}
-
-
-.content>p{
-    margin-top: 0.4rem;
-    width: 11rem;
-    color: #FFF;
     text-align: center;
-    font-family: Geologica;
-    font-size: 0.85rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-.messagebox{
-    width: 19rem;
-    color: #FFF;
-    text-align: center;
-    font-family: Geologica;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 19px; /* 105.556% */
-    animation: slideUp 2s ease-out forwards;
-}
-
- #name{
-    color: #131313;
-    font-family: Geologica;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 19px;
-}
-
-
-
-
-
-
-
-
-/* xs */
-/* @media (min-width: 475px) {} */
-
-
-/* moto g34 */
-@media screen and (min-width: 426px) and (max-width:539px) {
-
-    #topleftpinksheet{
-        width: 203.183px;
-        height: 179.67px;
+  }
+  
+  /* Slide-up Animation */
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100%) translateX(-50%);
+      opacity: 0;
     }
-    
-    #topleftletter{
-        width: 140px;
-        height: 132px; 
+    100% {
+      transform: translateY(0) translateX(-50%);
+      opacity: 1;
     }
-    
-    #topleftheart{
-        width: 123.511px;
-        height: 111.285px;
-        position: absolute;
-        top: -28px;
-        left: 150px;
+  }
+  
+  .btnwrapper {
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .btnwrapper {
+      bottom: 15%;
+      width: 17rem;
     }
-    
-    #toprightletter{
-        width: 165px;
-        height: 199px;
-        position: absolute;
-        top: -10px;
-        right: -62px;  
+  
+    .btnwrapper > button {
+      font-size: 1rem;
     }
-    
-    #xoxobackground{
-        width: 282.652px;
-        height: 262.654px;
-        transform: rotate(-16.707deg);
-         position: absolute;
-         top:26.6%;
-         right: -117px;     
+  
+    .animationContainer > svg {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
     }
-    
-    #xoxo{
-        width: 45px;
-        height: 26px;
-        position: absolute;
-        top:39.67%;
-        right: 14px; 
-        transform: rotate(32.465deg);
-    
+  }
+  
+  
+  
+  @media (min-width: 1280px) and (max-height: 720px) {
+  
+  
+    .btnwrapper {
+       width: 70%;
+       height: 60px;
     }
-    
-    #giftbox{
-            width: 176.48px;
-            height: 139px;
-            position: absolute;
-            top: 50%;
-            left: -59px;
+  
+  
+  /* Button Styling */
+  .btnwrapper > button {
+    font-size: 1.2rem;
+  }
+  
+  
+    .animationContainer > svg {
+      height: auto;
+      max-height: 100vh;
+      max-width: 100%;
+      object-fit: cover;
     }
-    
-    #bottomleftbackground{
-        width: 243.1px;
-        height: 110px;
-        position: absolute;
-        bottom:30px;
-        left: -59px;
-    }
-    
-    #bottomrightpinkpaper{
-        width: 210.236px;
-        height: 126px;
-        position: absolute;
-        bottom: 50px;
-        right: -45px;
-    }
-    
-    #bottomrightroses{
-        width: 108.443px;
-        height: 96.254px;
-        position: absolute;
-        bottom: 60px;
-        right: 12px;
-    
-    }
-
-    .maincontentbox{
-        position: absolute;
-        top: 14%;
-        left: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        justify-content:space-between;
-    }
-    
-    .logowrapper{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .logowrapper>img{
-        width: 100%;
-        max-width: 182px;
-    }
-
-    .content{
-        margin-top: -3rem;
-        margin-bottom: 3rem;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content:center;
-        animation: slideUp 2s ease-out forwards;
-    }
-    
-    .content>img{
-        width: 100%;
-        max-width: 11.75rem;
-        height: 13.25rem;
-        transform: rotate(-11.733deg);
-    }
-    
-    .thankyoutextbg{
-        margin-top: -2.8rem;
-        width: 160.502px;
-        height: 54.008px;
-        transform: rotate(-3.4deg);
-        flex-shrink: 0;
-        background-image: url('../../assets/pink text bg 2.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-     
-     #thankyoutext{
-        margin-top: 10px;
-        color: #D21F32;
-        text-align: center;
-        font-family: Geologica;
-        font-size: 1.1rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 18.63px; 
-    }
-    
-    
-    .content>p{
-        margin-top: 0.5rem;
-        width: 11rem;
-        color: #FFF;
-        text-align: center;
-        font-family: Geologica;
-        font-size: 0.85rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-    }
-    
-    .messagebox{
-        margin-top: 2rem;
-        width: 22rem;
-        color: #FFF;
-        text-align: center;
-        font-family: Geologica;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 19px; /* 105.556% */
-        animation: slideUp 2s ease-out forwards;
-    }
-    
-     #name{
-        color: #131313;
-        font-family: Geologica;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 19px;
-    }
-    
-
-
-
-
-}
-
-
-
-/* sm */
-@media (min-width: 640px) {
-
-    .logowrapper>img{
-        max-width:12rem;
-    }
-
-}
-
-/* md */
-/* @media (min-width: 768px) {} */
-
-/* lg */
-@media (min-width: 1024px) {
-
-    .maincontentbox{
-        position: absolute;
-        top: 3%;
-        left: 0;
-    }
-
-#topleftpinksheet{
-    width: 283px;
-    height: 194.78px ;
-   
-}
-
-#topleftletter{
-    width: 151px;
-    height: 159px;
-    position: absolute;
-    top: 7.94rem;
-    left: -30px;
-    
-}
-
-#topleftheart{
-    width: 156px;
-    height: 132px;
-    position: absolute;
-    top: -35px;
-    left: 15rem;
-}
-
-#toprightletter{
-    width: 191px;
-    height: 202px;
-    position: absolute;
-    top: -20px;
-    right: -79px;
-    
-}
-
-#xoxobackground{
-    width: 324.652px;
-    height: 282.654px;
-    transform: rotate(-16.707deg);
-     position: absolute;
-     top:26.6%;
-     right: -117px;     
-     animation: xoxobackgroundslideIn 2s ease-out forwards; 
-}
-
-#xoxo{
-    width: 89px;
-    height: 40px;
-    position: absolute;
-    top:50.67%;
-    right: 20px; 
-    transform: rotate(32.465deg) !important;
-}
-
-
-#giftbox{
-width: 209.48px;
-height: 178px;
-position: absolute;
-top: 55.76%;
-left: -68px;
-
-}
-
-
-#bottomleftbackground{
-    width: 333.1px;
-    height: 140px;
-    position: absolute;
-    bottom: -42px;
-    left: -59px;
-}
-
-#bottomrightpinkpaper{
-    width: 333.236px;
-    height: 156px;
-    position: absolute;
-    bottom: -6px;
-    right: -45px;
-
-}
-
-#bottomrightroses{
-    width: 165.443px;
-    height: 161px;
-    position: absolute;
-    bottom: 10px;
-    right: 12px;
-
-}
-
-    .logowrapper>img{
-        max-width:14rem;
-    }
-
-    .content>p{
-        width: 20rem;
-    }
-    
-    .messagebox{
-        width:40%;
-    }
-
-}
-
-/* xl */
-@media (min-width: 1280px) {
-
-}
-
-/* 2xl */
-@media (min-width: 1536px) {
-
-
-}
+  }
+  

@@ -1,26 +1,25 @@
 .container{
     width: 100%;
     height: 100vh;
-    background-image: url('../../assets/Enter details.png');
+    background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Enter%20details.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     box-sizing: border-box;
     position: relative;
 }
 
 .maincontentbox{
-    padding-top: 1.5rem;
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    gap: 1rem;
+    justify-content:space-around;
 }
 
 .logowrapper{
@@ -31,7 +30,7 @@
 
 .logowrapper>img{
     width: 100%;
-    max-width: 140px;
+    max-width: 142px;
 }
 
 .singerdesp{
@@ -83,28 +82,28 @@
   }
 
 .formbox{
-    padding: 6rem 0;
-    width:22rem;
+    width:80%;
+    height: auto;
+    margin: 26% 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:space-around;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .forminputbox{
-    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    /* padding: 0.5rem 0.5rem 0.5rem 0.5rem; */
     width: 100%;
-    height:4.1rem;
+    height: 56px;
     /* background-color: black; */
-    background-image: url('../../assets/inputbackgn.png');
+    background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/inputbackgn.png');
     background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+    background-size: contain;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: slideUpfrombottom 3s ease-out;
+    animation: slideUpfrombottom 1s ease-out;
 }
 
 
@@ -114,10 +113,11 @@
     background: none;
     color: #B80000;
     font-family: Geologica;
-    font-size: 18px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    padding-left: 1rem;
 }
 
 .forminputbox>input:focus{
@@ -128,26 +128,104 @@
 .forminputbox>input::placeholder{
     color: #B80000;
     font-family: Geologica;
-    font-size: 18px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
+#spanfornuminput{
+    color: rgba(255, 255, 255, 0.80);
+    font-family: Geologica;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 123.077% */
+}
+
+
+ .formcheckbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #FFF;
+    font-family: Geologica;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    animation: slideUpfrombottom 1s ease-out;
+  }
+  
+  .formcheckbox input[type="checkbox"] {
+    display: none;
+  }
+  
+  .formcheckbox input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .formcheckbox input[type="checkbox"] + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    padding: 5px;
+    border-color:#FFF; 
+    border-radius: 2px;
+    background-color:  #FFF; 
+    color: #fff;
+    text-align: center;
+    font-family: Geologica;
+    font-size: 13.6px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  
+  .formcheckbox input[type="checkbox"]:checked + label:before {
+    background-color:#fff;
+    border-color: #D21F32;
+    color: #fff;
+    text-align: center;
+    font-family: Geologica;
+    font-size: 13.6px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+  
+  .formcheckbox input[type="checkbox"]:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    width: 6px;
+    height: 12px;
+    border: solid #D21F32;;
+    border-width: 0 2.2px 2.2px 0;
+    transform: rotate(45deg);
+  } 
 
 .btnwrapper{
-    width:16rem;
-    height:auto;
+    width:100%;
+    height:54px;
     overflow: hidden;
-    background-image: url('../../assets/Union.png');
-    background-size: cover;
+    background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Union.png');
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center center;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:5px;
+    gap:0;
     cursor: pointer;
-    animation: slideUpbuttonfrombottom 3s ease-out;
+    animation: slideUpbuttonfrombottom 1s ease-out;
 }
 
 .btnwrapper>button{
@@ -155,17 +233,18 @@
     color: #BE1E2D;
     text-align: center;
     font-family: Geologica;
-    font-size: 18px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    text-align: left;
 }
 
 .errordisplay{
     position: absolute;
     bottom: 4rem;
     left: auto;
-    z-index: 1;
+    z-index: 9999;
     width:22rem;
     height:auto;
     padding: 1rem;
@@ -179,8 +258,10 @@
 }
 
 .errordisplay>img{
-   width: 2.5rem;
-   height: 2.5rem;
+    width: 100%;
+    max-width: 2.75rem;
+    height: auto;
+    background: none;
 }
 
 .errorwrapper{
@@ -223,15 +304,10 @@
 /* moto g34 */
 @media screen and (min-width: 426px) and (max-width:539px) {
 
-
-    .logowrapper{
-        margin-top: 2rem;
-    }
     
     .logowrapper>img{
-      
         width: 100%;
-        max-width: 180px;
+        max-width: 182px;
     }
     
     .singerdesp{
@@ -240,59 +316,35 @@
     }
      
     .singerdesp>p {
-        margin: 1rem 0;
-        font-size: 21px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: 1.8rem; /* 100% */  
     }
     
     #singername {
-        font-size: 21px;
+        font-size: 18px;
     }
 
     .formbox{
-        margin: 1rem 0;
-        width:25rem;
+        width:19rem;
         gap: 1.5rem;
       }
 
-      .forminputbox{
+      /* .forminputbox{
         padding: 0.5rem 0.5rem 0.5rem 1.5rem;
         width: 100%;
-        height:4.25rem;
-    }
+    } */
 
 
-      .forminputbox>input,select{
-        font-size: 22px;
+      .forminputbox>input{
+        font-size: 16px;
         padding-left: 1rem;
      }
    
-     .forminputbox>input::placeholder,select::placeholder{
-       font-size: 22px;
+     .forminputbox>input::placeholder{
+        font-size: 16px;
    }
-   
-   .forminputbox select {
-     font-size: 22px;
-   }
-   
-   .forminputbox select option {
-     font-size: 22px;
-   }
-
-   .btnwrapper{
-    width:17rem;
-    height:auto;
-    overflow: hidden;
-    gap:0;
-    cursor: pointer;
-}
-
-.btnwrapper>button{
-    font-size: 24px;
-}
-
 
 }
 
@@ -300,43 +352,39 @@
 
 
 /* sm */
-@media (min-width: 640px) {
-    .logowrapper>img{
-        max-width:11.75rem;
-    }
-    
+/* @media (min-width: 640px) {
 
-
-}
+} */
 
 /* md */
 /* @media (min-width: 768px) {} */
 
 /* lg */
-@media (min-width: 1024px) {
+@media  (min-width: 768px) and (max-width: 1024px)  {
     .container{
-        background-image: url('../../assets/registerbgdesktop.png');
+        background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/registerbgdesktop.png');
     } 
 
     .singerdesp{
-        width: 48%;
+        width: 28rem;
     }
     .singerdesp>p {
-        font-size: 22px;
+        font-size: 18px;
         line-height: 22px;
     }
     #singername {
-        font-size: 22px;
+        font-size: 18px;
         line-height: 22px;
     }
     .formbox{
-        padding: 2.5rem 0;
+        width: 19rem;
+        margin:30% 0;
     }
 
     .forminputbox{
         padding: 0.5rem 0.5rem 0.5rem 1.5rem;
-        width: 79%;
-        height:3.2rem;
+        width: 100%;
+        height:62px;
     }
 
     .errordisplay{
@@ -344,19 +392,44 @@
         bottom: 2rem;
         left: auto;
     }
-    
+    .btnwrapper>button{
+        font-size: 16px;
+    }
+
 }
 
 /* xl */
 @media (min-width: 1280px) {
 
     .container{
-        background-image: url('../../assets/registerbgdesktop.png');
+        background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/registerbgdesktop.png');
     } 
 
+    .singerdesp{
+        width: 28rem;
+    }
+    .singerdesp>p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    #singername {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .formbox{
+        width: 19rem;
+        margin:5%;
+    }
 
+    .forminputbox{
+        padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+        width: 100%;
+        height:62px;
+    }
 
-
+    .btnwrapper>button{
+        font-size: 16px;
+    }
 }
 
 /* 2xl */
@@ -364,7 +437,7 @@
 
 
     .container{
-        background-image: url('../../assets/registerbgdesktop.png');
+        background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/registerbgdesktop.png');
     } 
 
 }

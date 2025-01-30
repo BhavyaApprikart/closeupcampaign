@@ -41,7 +41,7 @@
 .logowrapper>img{
     width: 100%;
     max-width: 142px;
-    animation: imageslideDown 2s ease-out;
+    animation: imageslideDown 1s ease-out;
 }
 
 @keyframes imageslideDown {
@@ -153,10 +153,10 @@
 
 .forminputbox{
     animation: fadeInAppearEffect 1s ease-out;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /* padding: 0.5rem 0.5rem 0.5rem 0.5rem; */
     width:100%;
-    height: 60px;
-    background-image: url('../../assets/inputbackground.png');
+    height: 56px;
+    background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/inputbackgn.png');
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;
@@ -166,10 +166,10 @@
 
 .formselectbox{
   animation: fadeInAppearEffect 1s ease-out;
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  /* padding: 0.5rem 0.5rem 0.5rem 0.5rem; */
   width:100%;
-  height: 60px;
-  background-image: url('../../assets/inputbackground.png');
+  height: 56px;
+  background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/inputbackgn.png');
   background-repeat: no-repeat;
   background-size: contain;
   display: flex;
@@ -179,7 +179,7 @@
 }
 
 .forminputbox>input{
-    width:100%;
+    width:80%;
     border: none !important;
     background: none;
     color: #B80000;
@@ -228,7 +228,7 @@
 }
 
 .formselectbox>select {
-  width:100%;
+  width:80%;
   border: none !important;
   background: none;
   color: #B80000;
@@ -365,7 +365,9 @@
   }
 
 #disclaimer{
-      width: 100%;
+      margin-left: 1rem;
+      padding: 10px;
+      width: 90;
       height: 100%;
       text-align:left;
       color: #FFF;
@@ -374,7 +376,7 @@
       font-style: normal;
       font-weight: 400;
       line-height: 12px;
-      padding: 10px;
+        
 }
 
 
@@ -409,7 +411,7 @@
         position: absolute;
         bottom: 4rem;
         left: auto;
-        z-index: 1;
+        z-index: 9999;
        width:20rem;
        padding: 1rem;
        display:flex;
@@ -422,8 +424,10 @@
 }
 
 .errordisplay>img{
-       width: 2.5rem;
-       height: 2.5rem;
+      width: 100%;
+      max-width: 2.75rem;
+       height: auto;
+       background: none;
 }
 
 .errorwrapper{
@@ -731,10 +735,31 @@ font-size: 19px;
 /* md */
 /* @media (min-width: 768px) {} */
 
+@media (min-width:768px)  and (max-width: 1023px){
+  .singerdesp>p {
+    margin-top:-2rem;
+    max-width: 28rem;  
+    line-height: 1.12rem;
+    height: auto;
+}
+
+  .formbox{
+    width: 18rem; 
+    text-align: center;
+    gap: 0rem;
+}
+
+  #disclaimer{
+     margin-top: 0.5rem;
+     margin-left: 1rem;
+     max-width: 28rem; 
+  }
+}
+
 /* lg */
 @media (min-width: 1024px) {
     .container{   
-        background-image: url('../../assets/registerbgdesktop.png');
+        background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/registerbgdesktop.png');
     } 
 
     .maincontentbox{
@@ -792,8 +817,8 @@ font-size: 19px;
     }
 
     .forminputbox .formselectbox{
-        /* padding: 0.5rem 0.5rem 0.5rem 0.5rem; */
-        background-image: url('../../assets/Closeup Draft-Desktop.png');
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Closeup Draft-Desktop.png');
         width: 18rem;
         height: 52px;
     }
@@ -810,6 +835,7 @@ font-size: 19px;
       font-family: Geologica;
       font-size: 13.6px;
     } */
+
     .formbox{
       width: 18rem; 
       text-align: center;
@@ -818,6 +844,7 @@ font-size: 19px;
 
     #disclaimer{
        margin-top: 0.5rem;
+       margin-left: 1rem;
        max-width: 28rem; 
     }
 
@@ -842,20 +869,42 @@ font-size: 19px;
 @media (min-width: 1280px) {
 
     .container{
-        background-image: url('../../assets/registerbgdesktop.png');
+        background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/registerbgdesktop.png');
     } 
 
     .btnwrapper{
         animation: slideUpbtnwrapperdesktop 1s ease-out;
    }
 
+   .forminputbox>input,.formselectbox>select{
+    width: 100%;
+    font-size: 13px;
+    padding-left:1rem;
+    
+}
+
+.forminputbox>input::placeholder, .formselectbox>select::placeholder{
+   font-size: 13px;
+}
+
+.formselectbox select {
+   font-size: 13px;
+}
+
+.formselectbox select option {
+  font-size: 13px;
+}
+
+.forminputbox .formselectbox{
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Closeup Draft-Desktop.png');
+    width: 18rem;
+    height: 52px;
+}
+
+
 }
 
 /* 2xl */
-@media (min-width: 1536px) {
-
-    .container{
-        background-image: url('../../assets/registerbgdesktop.png');
-    } 
-
-}
+/* @media (min-width: 1536px) {
+} */

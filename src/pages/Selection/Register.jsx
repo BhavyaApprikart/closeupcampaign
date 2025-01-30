@@ -115,6 +115,14 @@ const handleRegButtonClick = async () => {
       newErrors.userotp = 'Please enter a valid OTP.';
     }
 
+     if (!document.getElementById('agree1').checked) {
+      newErrors.agree = 'You must agree to the terms and conditions.';
+     }
+
+     if (!document.getElementById('agree2').checked) {
+       newErrors.agree = 'You must agree to the terms and conditions.';
+     }
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
@@ -162,11 +170,21 @@ const handleChangeUserOtp = (event) => {
   setErrors((prevErrors) => ({ ...prevErrors, errorresponse: '' }));
 };
 
+  const handleCheckboxChange1 = () => {
+    setErrors((prevErrors) => ({ ...prevErrors, agree1: '' }));
+  };
+
+  const handleCheckboxChange2 = () => {
+    setErrors((prevErrors) => ({ ...prevErrors, agree2: '' }));
+  };
+
 const handleerrorboxclick = () => {
   setErrors((prevErrors) => ({ ...prevErrors, username: '' }));
   setErrors((prevErrors) => ({ ...prevErrors, usermobileno: '' }));
   setErrors((prevErrors) => ({ ...prevErrors, userotp: '' }));
   setErrors((prevErrors) => ({ ...prevErrors, errorresponse: '' }));
+  setErrors((prevErrors) => ({ ...prevErrors, agree1: '' }));
+  setErrors((prevErrors) => ({ ...prevErrors, agree2: '' }));
 };
 
   return (
@@ -177,47 +195,68 @@ const handleerrorboxclick = () => {
      <div className={style.logowrapper}>
           { logo && <img src={logo} alt="logo" /> }
      </div>
-
-     <div className={style.singerdesp}>
-     <p> Experience the Magic of <span id={style.singername}> Dhvani Bhanushali </span> Music – Anytime, Anywhere!</p>
-     </div>
  
      {  
       showotpscreen ? 
+      <>
+      <div className={style.singerdesp}>
+        <p> One Last Check!</p>
+        <p>We have sent a verification code on your WhatsApp!!</p>
+      </div>
+
       <div className={style.formbox}>
-      <div className={style.forminputbox} style={{marginTop:'1rem',marginBottom:'2rem'}}>
-      <input placeholder='Enter OTP' 
+      <div className={style.forminputbox}>
+      <input placeholder='Enter Verification Code' 
           type="text"
           name="userotp"               
           value={userotp} 
           onChange={handleChangeUserOtp}
           required/>
       </div>
-      </div>
-      :
-      <div className={style.formbox}>
 
+        <div className={style.formcheckbox}>
+        <input type="checkbox" id="agree1" name="agree1" onChange={handleCheckboxChange1} required />
+        <label htmlFor="agree1">I understand & consent to HUL & its partners to process my information for creation of personalized AI generated song featuring my Name, my loved one’s Name & characteristics. I agree to the T&C of this campaign. </label>
+      </div>
+
+      <div className={style.formcheckbox}>
+      <input type="checkbox" id="agree2" name="agree2" onChange={handleCheckboxChange2} required />
+      <label htmlFor="agree2"> I consent to receiving marketing communications (news, offers, updates, etc.) & online advertising tailored to your interests from trusted Unilever Brands via email, SMS, WhatsApp, etc. Privacy Notice </label>
+      </div>
+
+      </div>
+      </>
+      :
+      <>
+      <div className={style.singerdesp}>
+      <p> Enter your contact details to recieve your Verification code on WhatsApp </p>
+      </div>
+      <div className={style.formbox}>
       <div className={style.forminputbox}>
-       <input placeholder='Enter Name' 
+       <input placeholder='Your First Name' 
        type="text"
        name="username"               
        value={username} 
        onChange={handleChangeUsername}
        required />
-      </div>
-     <div className={style.forminputbox}>
-       <input placeholder='Enter Mobile no.' 
+        </div>
+
+       <div className={style.forminputbox}>
+       <input placeholder='Your Whatsapp Number' 
        type="text"
        name="usermobileno"               
        value={usermobileno} 
        onChange={handleChangeUserMobileNo}
        required />
-     </div>
-    </div>
-    }
+      </div>
+      <span id={style.spanfornuminput}>We will send your song on this number.</span>
+      </div>
+      </>
+
+  }
 
       <div className={style.btnwrapper}  onClick={showotpscreen ? handleRegButtonClick : handleOTPButtonClick} >
-      <button className={style.button} > { showotpscreen ? "Register" : "Send OTP"}  </button>
+      <button className={style.button} > { showotpscreen ? "Submit" : "Send Verification code"}  </button>
            { startIcon && <img src={startIcon} alt="start icon"/>}
       </div>
 

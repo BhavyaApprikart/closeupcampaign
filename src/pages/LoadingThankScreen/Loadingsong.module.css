@@ -1,212 +1,57 @@
-.container{
+.container {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Ensure animation fills the entire screen */
+  .animationContainer {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .animationContainer svg{
+    object-fit: contain;
+  }
+  
+  
+  .fullScreenAnimation {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    background: #D21F32;
+    z-index: 9999;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    position: relative;
+    justify-content: center;
+    align-items: center; 
     overflow: hidden;
-}
-
-@keyframes topleftpinksheetslideInDiagonal {
-    0% {
-        transform: translate(-100%, -100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-}
-
-#topleftpinksheet{
-    width: 119.183px;
-    height: 113px;
-    position: absolute;
-    top: -6px;
-    left: 0;
-    animation: topleftpinksheetslideInDiagonal 2s ease-out forwards;
-}
-
-
-@keyframes topleftletterslideIn {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-#topleftletter{
-    width: 100px;
-    height: 97px;
-    position: absolute;
-    top: 65px;
-    left: -30px;
-    animation: topleftletterslideIn 2s ease-out forwards;
-    
-}
-
-@keyframes topleftheartslideIn {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-        transform-origin: top center;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-#topleftheart{
-    width: 83.511px;
-    height: 71.285px;
-    position: absolute;
-    top: -20px;
-    left: 90px;
-    animation: topleftheartslideIn 2s ease-out forwards;
-}
-
-#toprightletter{
-    width: 140px;
-    height: 169px;
-    position: absolute;
-    top: -10px;
-    right: -62px;
-    animation: topleftpinksheetslideInDiagonal 2s ease-out forwards;    
-}
-
-@keyframes xoxobackgroundslideIn {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-#xoxobackground{
-    width: 262.652px;
-    height: 252.654px;
-    transform: rotate(-16.707deg);
-     position: absolute;
-     top:26.6%;
-     right: -117px;     
-     animation: xoxobackgroundslideIn 2s ease-out forwards; 
-}
-
-@keyframes slideInFromBottomCenter {
-    0% {
-        transform: translateY(100%) rotate(32.465deg);
-        opacity: 0;
-        transform-origin: bottom center;
-    }
-    100% {
-        transform: translateY(0) rotate(32.465deg);
-        opacity: 1;
-    }
-}
-
-#xoxo{
-    width: 45px;
-    height: 26px;
-    position: absolute;
-    top:43.67%;
-    right: 14px; 
-    animation: slideInFromBottomCenter 2s ease-out forwards;
-
-}
-
-@keyframes slideInFromBottomCenterGiftbox {
-    0% {
-        transform: translate(50%, 50%);
-        opacity: 0;
-    }
-    100% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-}
-
-#giftbox{
-        width: 153.48px;
-        height: 126px;
-        position: absolute;
-        top: 50%;
-        left: -59px;
-        animation: slideInFromBottomCenterGiftbox 2s ease-out forwards;
-}
-
-@keyframes bottomleftbackgslideIn {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-#bottomleftbackground{
-    width: 243.1px;
-    height: 110px;
-    position: absolute;
-    bottom:30px;
-    left: -59px;
-    animation: bottomleftbackgslideIn 2s ease-out forwards; 
-}
-
-@keyframes bottomrightslideInDiagonal {
-    0% {
-        transform: translate(100%, 100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-}
-
-#bottomrightpinkpaper{
-    width: 210.236px;
-    height: 126px;
-    position: absolute;
-    bottom: 50px;
-    right: -45px;
-    animation: bottomrightslideInDiagonal 2s ease-out forwards;
-}
-
-#bottomrightroses{
-    width: 108.443px;
-    height: 96.254px;
-    position: absolute;
-    bottom: 60px;
-    right: 12px;
-    animation: topleftheartslideIn 2s ease-out forwards;
-
-}
+  }
 
 .maincontentbox{
+    z-index: 2;
     position: absolute;
-    top: 10%;
-    left: 0;
-    width: 100%;
+    top: 37%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 69%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
     justify-content:space-between;
+    gap: 1rem;
 }
 
 .logowrapper{
@@ -217,8 +62,8 @@
 
 .logowrapper>img{
     width: 100%;
-    max-width: 180px;
-    animation: logoslideDown 2s ease-out;
+    max-width: 142px;
+    animation: logoslideDown 1s ease-out;
 }
 
 @keyframes logoslideDown {
@@ -277,21 +122,47 @@
 }
 
 .pinkbox{
-    margin-top: 0.5rem;
-    width:69%;
-    height: 10.98rem;
+    margin-top: 10px;
+    width:100%;
+    height: 13.75rem;
     background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Pink%20paper%20cut%202.png');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center center;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding:0.8rem;
     overflow: hidden;
-    z-index: 1;
-    animation: slideUp 2s ease-out forwards;
+    animation: slideUp 1s ease-out forwards;
 }
+
+.pinkbox>p{
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+    color: #FFF;
+    font-family: Geologica;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height:19px;
+}
+
+#splfeature{
+    color: #131313;
+    font-family: Geologica;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height:19px;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: 6%;
+    text-underline-offset: 12%;
+    text-underline-position: from-font;
+}
+
 
 /* .progressContainer{
     animation: slideUp 2s ease-out forwards;
@@ -326,7 +197,7 @@
   
   .progressBar {
     width: 62%;
-    height: 9.25px;
+    height: 6.25px;
     background-color:#FFFFFF52;
     background: rgba(255, 255, 255, 0.32);
     border-radius: 8px;
@@ -365,49 +236,11 @@
     line-height: normal;
   }
 
-.pinkbox>p{
-    width: 100%;
-    color: #FFF;
-    font-family: Geologica;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 400;
-    line-height:1rem;
-}
-
-#splfeature{
-    color: #131313;
-    font-family: Geologica;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1rem;
-    text-decoration-line: underline;
-    text-decoration-style: dotted;
-    text-decoration-skip-ink: auto;
-    text-decoration-thickness: 6%;
-    text-underline-offset: 12%;
-    text-underline-position: from-font;
-}
-
-
-
-
 
 
 
 /* iphone 13 mini */
 @media (min-width: 375px) {
-
-    #xoxo{
-        width: 59px;
-        height: 35px;
-        position: absolute;
-        top:39.67%;
-        right: 8px; 
-        transform: rotate(32.465deg);
-    }
-
 
 }
 
@@ -416,148 +249,91 @@
 
 
 /* sm */
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
 
-    .maincontentbox{
-        padding-top: 1rem;
-    }
-
-    .logowrapper>img{
-        max-width:12rem;
-    }
-
-}
+} */
 
 /* md */
-/* @media (min-width: 768px) {} */
+@media (min-width: 540px) and (max-width: 640px) {
+
+    .pinkbox{
+        width: 17rem;
+        height: 14.25rem;
+     }
+
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+
+    .pinkbox{
+        width: 17rem;
+        height: 14.25rem;
+     }
+
+}
+
 
 /* lg */
-@media (min-width: 1024px) {
+@media (min-width:768px)  and (max-width: 1024px){
 
-    .maincontentbox{
-        position: absolute;
-        top: 3%;
-        left: 0;
-    }
-
-#topleftpinksheet{
-    width: 283px;
-    height: 194.78px ;
-   
-}
-
-#topleftletter{
-    width: 151px;
-    height: 159px;
-    position: absolute;
-    top: 7.94rem;
-    left: -30px;
-    
-}
-
-#topleftheart{
-    width: 156px;
-    height: 132px;
-    position: absolute;
-    top: -35px;
-    left: 15rem;
-}
-
-#toprightletter{
-    width: 191px;
-    height: 202px;
-    position: absolute;
-    top: -20px;
-    right: -79px;
-    
-}
-
-#xoxobackground{
-    width: 324.652px;
-    height: 292.654px;
-    transform: rotate(-16.707deg);
-     position: absolute;
-     top:28%;
-     right: -117px;   
-}
-
-#xoxo{
-    width: 89px;
-    height: 40px;
-    position: absolute;
-    top:50.67%;
-    right: 20px; 
-    transform: rotate(32.465deg);
-}
-
-#giftbox{
-width: 206.48px;
-height: 180px;
-position: absolute;
-top: 55.76%;
-left: -72px;
-
-}
-
-
-#bottomleftbackground{
-    width: 333.1px;
-    height: 140px;
-    position: absolute;
-    bottom: -42px;
-    left: -59px;
-}
-
-#bottomrightpinkpaper{
-    width: 333.236px;
-    height: 156px;
-    position: absolute;
-    bottom: -6px;
-    right: -45px;
-
-}
-
-#bottomrightroses{
-    width: 165.443px;
-    height: 161px;
-    position: absolute;
-    bottom: 10px;
-    right: 12px;
-
-}
-
-
-    .logowrapper>img{
-        max-width:14rem;
-    }
-
-    .content{
-        width:32rem;
-    }
     .content>p{
-        font-size: 1.75rem;
-    }
+        font-size: 1.25rem;
+    } 
 
      .content #loadingtext{
-        font-size: 1.15rem;
+        font-size: 0.75rem;
      }
 
-     .pinkbox{
-        width: 26.25%;
-        height: 15.25rem;
+      .pinkbox{
+        width: 18rem;
+        height: 13.25rem;
      }
-     .pinkbox>p{
-        max-width: 16rem;
-        line-height:1.5rem;
+       .pinkbox>p{
+        line-height:22px;
+     } 
+
+
+}
+
+
+@media (min-width:1025px)  and (max-width: 1279px){
+
+    .content>p{
+        font-size: 1.25rem;
+    } 
+
+     .content #loadingtext{
+        font-size: 0.75rem;
      }
+
+      .pinkbox{
+        width: 18rem;
+        height: 13.25rem;
+     }
+       .pinkbox>p{
+        line-height:22px;
+     } 
 
 
 }
 
 /* xl */
 @media (min-width: 1280px) {
+    .content>p{
+        font-size: 1.25rem;
+    } 
 
+     .content #loadingtext{
+        font-size: 0.75rem;
+     }
 
+      .pinkbox{
+        width: 18rem;
+        height: 13.25rem;
+     }
+       .pinkbox>p{
+        line-height:22px;
+     } 
 }
 
 /* 2xl */
@@ -567,146 +343,4 @@ left: -72px;
 }
 
 
-/* moto g34 */
-@media screen and (min-width: 426px) and (max-width:539px){
 
-    #topleftpinksheet{
-        width: 203.183px;
-        height: 179.67px;
-    }
-    
-    #topleftletter{
-        width: 140px;
-        height: 132px; 
-    }
-    
-    #topleftheart{
-        width: 123.511px;
-        height: 111.285px;
-        position: absolute;
-        top: -28px;
-        left: 150px;
-    }
-    
-    #toprightletter{
-        width: 165px;
-        height: 199px;
-        position: absolute;
-        top: -10px;
-        right: -62px;  
-    }
-    
-    #xoxobackground{
-        width: 282.652px;
-        height: 262.654px;
-        transform: rotate(-16.707deg);
-         position: absolute;
-         top:26.6%;
-         right: -117px;     
-    }
-    
-    #xoxo{
-        width: 45px;
-        height: 26px;
-        position: absolute;
-        top:39.67%;
-        right: 14px; 
-        transform: rotate(32.465deg);
-    
-    }
-    
-    #giftbox{
-            width: 186.48px;
-            height: 146px;
-            position: absolute;
-            top: 48%;
-            left: -59px;
-    }
-    
-    #bottomleftbackground{
-        width: 263.1px;
-        height: 121px;
-        position: absolute;
-        bottom:30px;
-        left: -59px;
-    }
-    
-    #bottomrightpinkpaper{
-        width: 243.236px;
-        height: 136px;
-        position: absolute;
-        bottom: 50px;
-        right: -45px;
-    }
-    
-    #bottomrightroses{
-        width: 108.443px;
-        height: 96.254px;
-        position: absolute;
-        bottom: 70px;
-        right: 12px;
-    
-    }
-
-.logowrapper>img{
-    width: 100%;
-    max-width: 162px;
-    animation: logoslideDown 2s ease-out;
-}
-
-.content{
-    width:15rem;
-    overflow: hidden;
-}
-
-.content>p{
-    color: #FFF;
-    text-align: center;
-    font-family: Geologica;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    animation: slideUp 2s ease-out forwards;
-}
-
-.content #loadingtext{
-    margin-top: 1rem;
-    color: #FFF;
-    text-align: center;
-    font-family: Geologica;
-    font-size: 11.75px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-}
-
-.pinkbox{
-    margin-top: 5rem;
-    width:64.25%;
-    height: 14.75rem;
-    background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Pink%20paper%20cut%202.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center;
-    padding:0.8rem;
-    overflow: hidden;
-    z-index: 1;
-    animation: slideUp 2s ease-out forwards;
-}
-
-
-.pinkbox>p{
-    width: 85%;
-    color: #FFF;
-    font-family: Geologica;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 400;
-    line-height:1.5rem;
-}
-
-}

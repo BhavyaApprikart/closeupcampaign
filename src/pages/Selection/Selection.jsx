@@ -70,7 +70,7 @@ const Selection = () => {
     setErrors((prevErrors) => ({ ...prevErrors, friendname: '' }));
     setErrors((prevErrors) => ({ ...prevErrors, selectedFeature1: '' }));
     setErrors((prevErrors) => ({ ...prevErrors, selectedFeature2: '' }));
-    setErrors((prevErrors) => ({ ...prevErrors, agree: '' }));
+    // setErrors((prevErrors) => ({ ...prevErrors, agree: '' }));
   };
 
   const handleChangeFeature2 = (event) => {
@@ -103,9 +103,9 @@ const Selection = () => {
     if (!selectedFeature2) {
       newErrors.selectedFeature2 = 'Please select Feature 2.';
     }
-    if (!document.getElementById('agree').checked) {
-      newErrors.agree = 'You must agree to the terms and conditions.';
-    }
+    // if (!document.getElementById('agree').checked) {
+    //   newErrors.agree = 'You must agree to the terms and conditions.';
+    // }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
