@@ -552,26 +552,12 @@ font-size: 19px;
 
 
 /* moto g34 */
-@media screen and (min-width: 426px) and (max-width:539px) {
-  /* .container{
-    display: flex;
-    align-items: center;
-    justify-content:flex-start;
-    gap:0.5rem;
-} */
+@media screen and (min-width: 414px) and (max-width:539px) {
 
   .logowrapper>img{
     width: 100%;
     max-width: 162px;
 }
-
-  /* .maincontentbox{
-    margin-top:1rem;
-    width: 100%;
-    display: flex;
-    gap:1rem;
-    align-items: center;
-  } */
 
   .singercard{
     margin-top: -1rem;
@@ -597,6 +583,7 @@ font-size: 19px;
   }
 
   .forminputbox>input, .formselectbox>select{
+     width: 100%;
      font-size: 14px;
      padding-left: 1rem;
   }
@@ -610,16 +597,19 @@ font-size: 19px;
 }
 
     .formbox{
-      width:70%;
+      margin: 8% 0;
+      width:75%;
       gap: 1.5rem;
     }
 
     .forminputbox{
           animation: slideUpbtnwrapper 1s ease-out;
+          padding-left: 0.5rem;
     }
 
     .formselectbox{
         animation: slideUpbtnwrapper 1s ease-out;
+        padding-left: 0.5rem;
     }
 
     .formcheckbox {
@@ -649,13 +639,6 @@ font-size: 19px;
 
 /* redmi */
 @media only screen and (-webkit-min-device-pixel-ratio: 2.75) {
-
-  /* .container{
-    display: flex;
-    align-items: center;
-    justify-content:flex-start;
-    gap:0.5rem;
-} */
 
   .logowrapper>img{ 
     width: 100%;
