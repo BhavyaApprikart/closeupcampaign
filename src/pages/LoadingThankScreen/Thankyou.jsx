@@ -2,93 +2,74 @@ import Lottie from 'lottie-react';
 import style from './Thankyou.module.css';
 import { useEffect, useState } from 'react';
 import Spinner from '../Home/Spinner';
-import thankyoudkanimation from '../../assets/Thank-you-sc.json'
-import thankyoumobileanimation from '../../assets/Mobile-Thank-u-sc.json'
 
 const Thankyou = () => {
-
   const [isLoading, setIsLoading] = useState(true);
-  const [isAnimationComplete, setIsAnimationComplete] = useState(false);
-  const [isMobile, setIsMobile] = useState(false); // State to track if the device is mobile
-  const [animationData, setAnimationData] = useState(thankyoudkanimation);
-  const [animationDataMobile, setAnimationDataMobile] = useState(thankyoumobileanimation);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [animationData, setAnimationData] = useState(null);
+  const [hasPlayed, setHasPlayed] = useState(false); // Ensures animation plays only once
 
-
-    useEffect(() => {
-    // Dynamically load assets
+  useEffect(() => {
+    // Load animation data only once
     const loadAssets = async () => {
       try {
-        const animationDataUrl ='https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Thank-you-sc.json';
-        const animationDataMobileUrl ='https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Mobile-Thank-u-sc.json';
+        const animationDataUrl = 'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Thank-you-sc.json';
+        const animationDataMobileUrl = 'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Mobile-Thank-u-sc.json';
 
-        // Load assets dynamically
-        const [
-          animationDataResponse,
-          animationDataMobileResponse,
-        ] = await Promise.all([
-          fetch(animationDataUrl).then((res) => res.json()),
-          fetch(animationDataMobileUrl).then((res) => res.json()),
-        ]);
-
-        setAnimationData(animationDataResponse);
-        setAnimationDataMobile(animationDataMobileResponse);
-
+        const response = await fetch(isMobile ? animationDataMobileUrl : animationDataUrl);
+        const data = await response.json();
+        
+        setAnimationData(data);
       } catch (error) {
         console.error('Failed to load assets:', error);
       }
     };
 
-    loadAssets();
-  }, []);
-  
-  const handleAnimationComplete = () => {
-    setIsAnimationComplete(true);
-  };
+    if (!hasPlayed) {
+      loadAssets();
+    }
+  }, [isMobile, hasPlayed]); // Load only once
 
   useEffect(() => {
-    // Check if the screen is mobile
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    setIsMobile(mediaQuery.matches); // Update state based on the screen size
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
 
-    const handleResize = () => {
-      setIsMobile(mediaQuery.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleResize); // Listen for screen size changes
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleResize); // Cleanup event listener
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
-    // Simulate loading for spinner
+    // Simulate loading delay before animation plays
     const timer = setTimeout(() => {
-      setIsLoading(false); // Hide spinner after animation is ready
-    }, 1000); // Adjust delay as needed
+      setIsLoading(false);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
 
+  const handleAnimationComplete = () => {
+    setHasPlayed(true); // Prevents reloading animation again
+  };
 
   return (
     <div className={style.container}>
-    {isLoading ? (
-      <Spinner /> // Show spinner while loading
-    ):(<div className={style.animationContainer}>
-    <Lottie
-      animationData={isMobile ? animationDataMobile : animationData} // Conditional animation for the main content
-      loop={false}
-      autoplay={true}
-      onComplete={handleAnimationComplete} // Animation completion logic
-      style={{position:'absolute',left:0,right:0,width:'100vw',height:'100svh'}}
-      rendererSettings={{
-        preserveAspectRatio: "xMidYMid slice",
-      }}
-    />
-    </div>)}
+      {isLoading ? (
+        <Spinner /> // Show spinner while loading
+      ) : (
+        animationData && (
+          <div className={style.animationContainer}>
+            <Lottie
+              animationData={animationData}
+              loop={false}
+              autoplay={!hasPlayed} // Plays only if it hasn't played before
+              onComplete={handleAnimationComplete} // Set flag after animation completes
+              style={{ position: 'absolute', left: 0, right: 0, width: '100vw', height: '100svh' }}
+              rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
+            />
+          </div>
+        )
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Thankyou
+export default Thankyou;
