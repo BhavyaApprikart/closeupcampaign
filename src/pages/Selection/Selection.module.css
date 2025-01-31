@@ -597,9 +597,9 @@ font-size: 19px;
 }
 
     .formbox{
-      margin: 8% 0;
-      width:75%;
-      gap: 1.5rem;
+        margin: 7.5% 0;
+        width:75%;
+        gap: 1.5rem;
     }
 
     .forminputbox{
