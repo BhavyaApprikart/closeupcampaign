@@ -67,7 +67,7 @@
 
 .singercard{
     width: 9.85rem;
-    height: 13.85rem;
+    height: 12.85rem;
     /* background-color: black; */
     background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/cd%20disc%20gif.gif');
     background-repeat: no-repeat;
@@ -122,9 +122,6 @@
 @keyframes fadeInAppearEffect {
     0% {
       opacity: 0;
-    }
-    25%{
-        opacity: 0.25;
     }
     50%{
         opacity: 0.5;
