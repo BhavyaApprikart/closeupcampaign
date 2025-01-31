@@ -598,7 +598,7 @@ font-size: 19px;
 }
 
     .formbox{
-        width:75%;
+        width:19.5rem;
         gap: 1.5rem;
     }
 
@@ -886,6 +886,20 @@ font-size: 19px;
     height: 52px;
 }
 
+.formselectbox::after {
+  content: '';
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid  #B80000; /* Creates a red filled arrow */
+  z-index: 1;
+  pointer-events: none; /* Prevents interaction */
+}
 
 }
 

@@ -98,7 +98,7 @@ const Home2 = () => {
   return (
     <div className={style.container}>
       {isLoading ? (
-        '' // Show spinner while loading
+          <Spinner/>
       ) : playFullScreenAnimation ? ( // Show full-screen animation if triggered
         <div className={style.fullScreenAnimation}>
           <Lottie
