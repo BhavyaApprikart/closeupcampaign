@@ -465,7 +465,7 @@
 
 
 /*iPhone 7 / 13 mini */
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 375px) and (max-width:413) {
 
 .logowrapper>img{
   width: 100%;
@@ -518,9 +518,10 @@ font-size: 19px;
 font-size: 19px;
 } */
 
- .formbox{
-   gap: 0.5rem;
- }
+.formbox{
+  margin:0;
+  gap: 0.5rem;
+}
 
  .forminputbox{
        animation: slideUpbtnwrapper 1s ease-out;
