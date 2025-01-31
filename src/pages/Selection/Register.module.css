@@ -216,6 +216,21 @@
     transform: rotate(45deg);
   } 
 
+  #tclink{
+    color: #017EFF;
+    font-family: Geologica;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+  }
+
 .btnwrapper{
     width:100%;
     height:46px;
@@ -276,6 +291,7 @@
     flex-direction: column;
     gap:0.5rem;
     align-items: flex-start;
+
     text-align: left;
 }
 

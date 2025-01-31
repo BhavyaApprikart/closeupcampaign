@@ -5,6 +5,9 @@ import Selection from './pages/Selection/Selection.jsx';
 import Loadingsong from './pages/LoadingThankScreen/Loadingsong.jsx';
 import Thankyou from './pages/LoadingThankScreen/Thankyou.jsx';
 import Home2 from './pages/Home/Home2.jsx';
+import TermsAndConditions from './TermsAndCondition.jsx';
+
+
 
 function App() {
   return (
@@ -17,6 +20,7 @@ function App() {
       <Route path='/selection' element={<Selection />} />
       <Route path='/loadingsong' element={<Loadingsong />} />
       <Route path='/thankyou' element={<Thankyou />} />
+      <Route path='/TermsAndConditions' element={<TermsAndConditions />} />
     </Routes>
   </BrowserRouter>      
     </>

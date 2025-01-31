@@ -1,0 +1,74 @@
+/* Enable smooth scrolling */
+.terms-wrapper {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;  /* Enables scrolling */
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar for WebKit browsers (Chrome, Edge, Safari) */
+  .terms-wrapper::-webkit-scrollbar {
+    width: 6px;  /* Small scrollbar width */
+  }
+  
+  .terms-wrapper::-webkit-scrollbar-track {
+    background: transparent; /* Invisible track */
+  }
+  
+  .terms-wrapper::-webkit-scrollbar-thumb {
+    background: white;  /* White scrollbar */
+    border-radius: 10px;  /* Rounded edges */
+  }
+  
+  .terms-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7); /* Slightly visible on hover */
+  }
+  
+  /* For Firefox */
+  .terms-wrapper {
+    scrollbar-width: thin;  /* Makes scrollbar small */
+    scrollbar-color: white transparent; /* White scrollbar on transparent background */
+  }
+  
+
+
+.terms-container {
+    max-width: 800px;
+    margin: 0px auto 20px auto;
+    padding: 20px;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    font-family: Geologica;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #fff;
+    margin: 1.5rem 0;
+  }
+  
+  h2 {
+    color: #fff;
+    margin-top: 20px;
+  }
+  
+  p, ul {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.6;
+  }
+  
+  ul {
+    padding-left: 20px;
+  }
+  
+  a {
+    color: #017EFF;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

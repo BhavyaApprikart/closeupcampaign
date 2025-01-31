@@ -216,7 +216,7 @@ const handleerrorboxclick = () => {
 
         <div className={style.formcheckbox}>
         <input type="checkbox" id="agree1" name="agree1" onChange={handleCheckboxChange1} required />
-        <label htmlFor="agree1">I understand & consent to HUL & its partners to process my information for creation of personalized AI generated song featuring my Name, my loved one’s Name & characteristics. I agree to the T&C of this campaign. </label>
+        <label htmlFor="agree1">I understand & consent to HUL & its partners to process my information for creation of personalized AI generated song featuring my Name, my loved one’s Name & characteristics. I agree to the <span  onClick={() => window.open('/TermsAndConditions', '_blank')} id={style.tclink}> T&C </span> of this campaign. </label>
       </div>
 
       <div className={style.formcheckbox}>
