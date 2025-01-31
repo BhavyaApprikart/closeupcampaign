@@ -14,42 +14,32 @@ const Thankyou = () => {
   const [animationDataMobile, setAnimationDataMobile] = useState(thankyoumobileanimation);
 
 
-    // useEffect(() => {
-  //   // Dynamically load assets
-  //   const loadAssets = async () => {
-  //     try {
-  //         'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Splash-sc%20Initial%20(1280-720).json';
-  //       const animationDataMobileUrl =
-  //         'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Mobile-Splash-sc.json';
-  //       const startButtonAnimationDesktopUrl =
-  //         'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Splash-sc%20END%20(1280-720).json';
-  //       const startButtonAnimationMobileUrl =
-  //         'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Mobile-Splash-sc%20(END).json';
+    useEffect(() => {
+    // Dynamically load assets
+    const loadAssets = async () => {
+      try {
+        const animationDataUrl ='https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Thank-you-sc.json';
+        const animationDataMobileUrl ='https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Mobile-Thank-u-sc.json';
 
-  //       // Load assets dynamically
-  //       const [
-  //         animationDataResponse,
-  //         animationDataMobileResponse,
-  //         startButtonDesktopResponse,
-  //         startButtonMobileResponse,
-  //       ] = await Promise.all([
-  //         fetch(animationDataUrl).then((res) => res.json()),
-  //         fetch(animationDataMobileUrl).then((res) => res.json()),
-  //         fetch(startButtonAnimationDesktopUrl).then((res) => res.json()),
-  //         fetch(startButtonAnimationMobileUrl).then((res) => res.json()),
-  //       ]);
+        // Load assets dynamically
+        const [
+          animationDataResponse,
+          animationDataMobileResponse,
+        ] = await Promise.all([
+          fetch(animationDataUrl).then((res) => res.json()),
+          fetch(animationDataMobileUrl).then((res) => res.json()),
+        ]);
 
-  //       setAnimationData(animationDataResponse);
-  //       setAnimationDataMobile(animationDataMobileResponse);
-  //       setStartButtonAnimationDesktop(startButtonDesktopResponse);
-  //       setStartButtonAnimationMobile(startButtonMobileResponse);
-  //     } catch (error) {
-  //       console.error('Failed to load assets:', error);
-  //     }
-  //   };
+        setAnimationData(animationDataResponse);
+        setAnimationDataMobile(animationDataMobileResponse);
 
-  //   loadAssets();
-  // }, []);
+      } catch (error) {
+        console.error('Failed to load assets:', error);
+      }
+    };
+
+    loadAssets();
+  }, []);
   
   const handleAnimationComplete = () => {
     setIsAnimationComplete(true);
@@ -91,7 +81,10 @@ const Thankyou = () => {
       loop={false}
       autoplay={true}
       onComplete={handleAnimationComplete} // Animation completion logic
-      style={{position:'absolute',left:0,right:0,width:'100vw',height:'100vh',aspectRatio:'auto'}}
+      style={{position:'absolute',left:0,right:0,width:'100vw',height:'100svh'}}
+      rendererSettings={{
+        preserveAspectRatio: "xMidYMid slice",
+      }}
     />
     </div>)}
     </div>

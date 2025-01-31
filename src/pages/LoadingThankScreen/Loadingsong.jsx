@@ -3,10 +3,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Lottie from 'lottie-react';
 import Spinner from '../Home/Spinner.jsx';
-import desktopldanimation from '../../assets/INITIAL Loading-sc.json'
-import mobileldanimation from '../../assets/INITIAL Mobile-Loading-sc.json'
-import desktopendanimation from '../../assets/END Loading-sc.json'
-import mobileendanimation from '../../assets/END Mobile-Loading-sc.json'
+// import desktopldanimation from '../../assets/INITIAL Loading-sc.json'
+// import mobileldanimation from '../../assets/INITIAL Mobile-Loading-sc.json'
+// import desktopendanimation from '../../assets/END Loading-sc.json'
+// import mobileendanimation from '../../assets/END Mobile-Loading-sc.json'
 
 const Loadingsong = () => {
 
@@ -15,10 +15,49 @@ const Loadingsong = () => {
   const [isMobile, setIsMobile] = useState(false); // State to track if the device is mobile
   const [playFullScreenAnimation, setPlayFullScreenAnimation] = useState(false); // Track if the full-screen animation should play
 
-  const [animationData, setAnimationData] = useState(desktopldanimation);
-  const [animationDataMobile, setAnimationDataMobile] = useState(mobileldanimation);
-  const [startButtonAnimationDesktop, setStartButtonAnimationDesktop] = useState(desktopendanimation);
-  const [startButtonAnimationMobile, setStartButtonAnimationMobile] = useState(mobileendanimation);
+  const [animationData, setAnimationData] = useState(null);
+  const [animationDataMobile, setAnimationDataMobile] = useState(null);
+  const [startButtonAnimationDesktop, setStartButtonAnimationDesktop] = useState(null);
+  const [startButtonAnimationMobile, setStartButtonAnimationMobile] = useState(null);
+
+  useEffect(() => {
+    // Dynamically load assets
+    const loadAssets = async () => {
+      try {
+        const animationDataUrl =
+          'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/INITIAL%20Loading-sc.json';
+        const animationDataMobileUrl =
+          'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/INITIAL%20Mobile-Loading-sc.json';
+        const startButtonAnimationDesktopUrl =
+          'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/END%20Loading-sc.json';
+        const startButtonAnimationMobileUrl =
+          'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/END%20Mobile-Loading-sc.json';
+
+        // Load assets dynamically
+        const [
+          animationDataResponse,
+          animationDataMobileResponse,
+          startButtonDesktopResponse,
+          startButtonMobileResponse,
+        ] = await Promise.all([
+          fetch(animationDataUrl).then((res) => res.json()),
+          fetch(animationDataMobileUrl).then((res) => res.json()),
+          fetch(startButtonAnimationDesktopUrl).then((res) => res.json()),
+          fetch(startButtonAnimationMobileUrl).then((res) => res.json()),
+        ]);
+
+        setAnimationData(animationDataResponse);
+        setAnimationDataMobile(animationDataMobileResponse);
+        setStartButtonAnimationDesktop(startButtonDesktopResponse);
+        setStartButtonAnimationMobile(startButtonMobileResponse);
+      } catch (error) {
+        console.error('Failed to load assets:', error);
+      }
+    };
+
+    loadAssets();
+  }, []);
+
 
   const handleAnimationComplete = () => {
     setIsAnimationComplete(true);
@@ -41,7 +80,7 @@ const Loadingsong = () => {
       setIsMobile(mediaQuery.matches);
     };
 
-    mediaQuery.addEventListener('change', handleResize); // Listen for screen size changes
+      mediaQuery.addEventListener('change', handleResize); // Listen for screen size changes
 
     return () => {
       mediaQuery.removeEventListener('change', handleResize); // Cleanup event listener
@@ -56,43 +95,6 @@ const Loadingsong = () => {
 
     return () => clearTimeout(timer);
   }, []);
-
-  // useEffect(() => {
-  //   // Dynamically load assets
-  //   const loadAssets = async () => {
-  //     try {
-  //         'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Splash-sc%20Initial%20(1280-720).json';
-  //       const animationDataMobileUrl =
-  //         'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Mobile-Splash-sc.json';
-  //       const startButtonAnimationDesktopUrl =
-  //         'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Splash-sc%20END%20(1280-720).json';
-  //       const startButtonAnimationMobileUrl =
-  //         'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Mobile-Splash-sc%20(END).json';
-
-  //       // Load assets dynamically
-  //       const [
-  //         animationDataResponse,
-  //         animationDataMobileResponse,
-  //         startButtonDesktopResponse,
-  //         startButtonMobileResponse,
-  //       ] = await Promise.all([
-  //         fetch(animationDataUrl).then((res) => res.json()),
-  //         fetch(animationDataMobileUrl).then((res) => res.json()),
-  //         fetch(startButtonAnimationDesktopUrl).then((res) => res.json()),
-  //         fetch(startButtonAnimationMobileUrl).then((res) => res.json()),
-  //       ]);
-
-  //       setAnimationData(animationDataResponse);
-  //       setAnimationDataMobile(animationDataMobileResponse);
-  //       setStartButtonAnimationDesktop(startButtonDesktopResponse);
-  //       setStartButtonAnimationMobile(startButtonMobileResponse);
-  //     } catch (error) {
-  //       console.error('Failed to load assets:', error);
-  //     }
-  //   };
-
-  //   loadAssets();
-  // }, []);
 
 
     const navigate = useNavigate();
@@ -121,9 +123,9 @@ const Loadingsong = () => {
   
       if (progress === 100) {
         setCurrentText(texts[3]);
-        // setTimeout(() => {
-        //   handleStartClick();
-        // }, 1000);
+            setTimeout(() => {
+              handleStartClick();
+            }, 1000);
       }
   
       return () => {
@@ -146,7 +148,10 @@ const Loadingsong = () => {
             loop={false} // Play only once
             autoplay={true}
             onComplete={handleFullScreenAnimationComplete} // Navigate after animation finishes
-            style={{position:'absolute',left:0,right:0,width:'100vw',height:'100vh',aspectRatio:"auto"}}
+            style={{position:'absolute',left:0,right:0,width:'100vw',height:'100svh'}}
+            rendererSettings={{
+              preserveAspectRatio: "xMidYMid slice",
+            }}
             />
         </div>
       ) : (
@@ -157,7 +162,10 @@ const Loadingsong = () => {
               loop={false}
               autoplay={true}
               onComplete={handleAnimationComplete} // Animation completion logic
-              style={{position:'absolute',left:0,right:0,width:'100vw',height:'100vh',aspectRatio:'auto'}}
+              style={{position:'absolute',left:0,right:0,width:'100vw',height:'100vh'}}
+              rendererSettings={{
+                preserveAspectRatio: "xMidYMid slice",
+              }}
             />
           </div>
           {isAnimationComplete && ( // Show content only after animation finishes

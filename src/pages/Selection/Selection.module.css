@@ -153,7 +153,7 @@
 
 .forminputbox{
     animation: fadeInAppearEffect 1s ease-out;
-    /* padding: 0.5rem 0.5rem 0.5rem 0.5rem; */
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     width:100%;
     height: 56px;
     background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/inputbackgn.png');
@@ -166,7 +166,7 @@
 
 .formselectbox{
   animation: fadeInAppearEffect 1s ease-out;
-  /* padding: 0.5rem 0.5rem 0.5rem 0.5rem; */
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   width:100%;
   height: 56px;
   background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/inputbackgn.png');
@@ -179,7 +179,7 @@
 }
 
 .forminputbox>input{
-    width:80%;
+    width:90%;
     border: none !important;
     background: none;
     color: #B80000;
@@ -228,7 +228,7 @@
 }
 
 .formselectbox>select {
-  width:80%;
+  width:85%;
   border: none !important;
   background: none;
   color: #B80000;
@@ -236,7 +236,7 @@
   font-size: 11px;
   font-style: normal;
   font-weight: 400;
-  padding-left:1rem;
+  padding-left:0.5rem;
    appearance: none; /* Remove default arrow */
   -webkit-appearance: none; 
   -moz-appearance: none;
@@ -248,7 +248,7 @@
 .formselectbox::after {
   content: '';
   position: absolute;
-  right: 20px;
+  right: 30px;
   top: 50%;
   transform: translateY(-50%);
   width: 0;
@@ -381,8 +381,8 @@
 
 
 .btnwrapper{
-    width: 15rem;
-    height: auto;
+    width:100%;
+    height:46px;
     overflow: hidden;
     background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Union.png');
     background-size:contain;
@@ -390,13 +390,15 @@
     background-position: center center;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:center;
     gap: 0px;
     cursor: pointer;
     animation: slideUpbtnwrapper 1s ease-out;
 }
 
 .btnwrapper>button{
+    margin-left: -0.5rem;
+    text-align: left;
     background: none; 
     color: #BE1E2D;
     text-align: center;
@@ -435,10 +437,12 @@
     flex-direction: column;
     gap:0.5rem;
     align-items: flex-start;
-
+    text-align: left;
 }
 
 .errorwrapper>h3{
+        text-align: left;
+        width:auto;
         color: #B80000;
         text-align: center;
         font-family: Geologica;

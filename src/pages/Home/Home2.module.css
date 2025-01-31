@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,11 +21,6 @@
   margin-right: auto;
 }
 
-.animationContainer svg{
-  object-fit: contain;
-}
-
-
 .fullScreenAnimation {
   position: absolute;
   top: 0;
@@ -40,15 +35,14 @@
 }
 
 
-
 /* Button Wrapper to appear above animation */
 .btnwrapper {
   position: absolute;
-  bottom: 10.75%;
+  bottom: 14.12%;
   left: 50%;
   transform: translateX(-50%);
-  width: 16rem;
-  height: 42px;
+  width:100%;
+  height:46px;
   background-image: url('https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/Union.png');
   background-size: contain;
   background-position: center center;
@@ -87,44 +81,37 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (min-width: 375px) {
   .btnwrapper {
     bottom: 15%;
-    width: 17rem;
   }
 
   .btnwrapper > button {
     font-size: 1rem;
   }
 
-  .animationContainer > svg {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-  }
 }
 
+/* Responsive Adjustments */
+/* @media (max-width: 375px) and (min-width:540) {
+  .btnwrapper {
+    bottom: 15%;
+  }
 
+  .btnwrapper > button {
+    font-size: 1rem;
+  }
+
+} */
 
 @media (min-width: 1280px){
 
-
   .btnwrapper {
-     width: 70%;
-     height: 60px;
+    bottom: 12%;
   }
 
-
-/* Button Styling */
-.btnwrapper > button {
-  font-size: 1.2rem;
-}
-
-
-  .animationContainer > svg {
-    height: auto;
-    max-height: 100vh;
-    max-width: 100%;
-    object-fit: cover;
+  .btnwrapper > button {
+    font-size: 1.2rem;
   }
+
 }

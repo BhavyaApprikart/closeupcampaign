@@ -98,7 +98,7 @@ const Home2 = () => {
   return (
     <div className={style.container}>
       {isLoading ? (
-        <Spinner /> // Show spinner while loading
+        '' // Show spinner while loading
       ) : playFullScreenAnimation ? ( // Show full-screen animation if triggered
         <div className={style.fullScreenAnimation}>
           <Lottie
@@ -109,8 +109,11 @@ const Home2 = () => {
             }
             loop={false} // Play only once
             autoplay={true}
+            rendererSettings={{
+              preserveAspectRatio: "xMidYMid slice",
+            }}
             onComplete={handleFullScreenAnimationComplete} // Navigate after animation finishes
-            style={{position:'absolute',left:0,right:0,width:'100vw',height:'100vh',aspectRatio:"auto"}}
+            style={{position:'absolute',left:0,right:0,width:'100vw',height:'100svh'}}
             />
         </div>
       ) : (
@@ -121,8 +124,11 @@ const Home2 = () => {
               loop={false}
               autoplay={true}
               onComplete={handleAnimationComplete} // Animation completion logic
-              style={{position:'absolute',left:0,right:0,width:'100vw',height:'100vh',aspectRatio:'auto'}}
-            />
+              style={{position:'absolute',left:0,right:0,width:'100vw',height:'100svh'}}
+              rendererSettings={{
+                preserveAspectRatio: "xMidYMid slice",
+              }}
+              />
           </div>
           {isAnimationComplete && ( // Show content only after animation finishes
             <div className={style.content}>
