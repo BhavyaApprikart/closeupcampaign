@@ -80,7 +80,8 @@ const Selection = () => {
   };
 
   const handleChangeFriendName = (event) => {
-    setFriendName(event.target.value);
+    const trimmedname = event.target.value.replace(/^\s+|\s+$/g, '');
+    setFriendName(trimmedname);
     setErrors((prevErrors) => ({ ...prevErrors, friendname: '' }));
   };
 
@@ -122,13 +123,13 @@ const Selection = () => {
 
   const options = [
     { value: 'Smile', label: 'Smile' },
-    { value: 'Nose', label: 'Nose' },
-    { value: 'Hairs', label: 'Hairs' },
     { value: 'Eyes', label: 'Eyes' },
-    { value: 'Laugh', label: 'Laugh' },
-    { value: 'Cheeks', label: 'Cheeks' },
-    { value: 'Skin tone', label: 'Skin tone' },
-    { value: 'Lips', label: 'Lips' },
+    { value: 'Breath', label: 'Breath' },
+    { value: 'Face', label: 'Face' },
+    { value: 'Fragrance', label: 'Fragrance' },
+    { value: 'Companionship', label: 'Companionship' },
+    { value: 'Hair', label: 'Hair' },
+    { value: 'Words', label: 'Words' },
   ];
 
 

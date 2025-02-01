@@ -153,7 +153,8 @@ const handleRegButtonClick = async () => {
 };
 
 const handleChangeUsername = (event) => {
-  setUserName(event.target.value);
+  const trimmedname = event.target.value.replace(/^\s+|\s+$/g, '');
+  setUserName(trimmedname);
   setErrors((prevErrors) => ({ ...prevErrors, username: '' }));
   setErrors((prevErrors) => ({ ...prevErrors, errorresponse: '' }));
 };

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Lottie from 'lottie-react';
 import Spinner from '../Home/Spinner.jsx';
-// import desktopldanimation from '../../assets/INITIAL Loading-sc.json'
+// import desktopldanimation from '../../assets/Loading-sc.json'
 // import mobileldanimation from '../../assets/INITIAL Mobile-Loading-sc.json'
 // import desktopendanimation from '../../assets/END Loading-sc.json'
 // import mobileendanimation from '../../assets/END Mobile-Loading-sc.json'
@@ -26,7 +26,8 @@ const Loadingsong = () => {
       try {
         const animationDataUrl =
           'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/INITIAL%20Loading-sc.json';
-        const animationDataMobileUrl =
+       
+          const animationDataMobileUrl =
           'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/INITIAL%20Mobile-Loading-sc.json';
         const startButtonAnimationDesktopUrl =
           'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/END%20Loading-sc.json';
