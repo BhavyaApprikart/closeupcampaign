@@ -163,7 +163,7 @@ const Loadingsong = () => {
               loop={false}
               autoplay={true}
               onComplete={handleAnimationComplete} // Animation completion logic
-              style={{position:'absolute',left:0,right:0,width:'100vw',height:'100vh'}}
+              style={{position:'absolute',left:0,right:0,width:'100vw',height:'100svh'}}
               rendererSettings={{
                 preserveAspectRatio: "xMidYMid slice",
               }}
