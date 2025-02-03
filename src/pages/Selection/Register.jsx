@@ -120,7 +120,7 @@ const handleRegButtonClick = async () => {
      }
 
      if (!document.getElementById('agree2').checked) {
-       newErrors.agree2 = 'You must agree to the privacy policy.';
+       newErrors.agree2 = 'You must agree to the privacy policies.';
      }
 
     if (Object.keys(newErrors).length > 0) {
@@ -171,22 +171,27 @@ const handleChangeUserOtp = (event) => {
   setErrors((prevErrors) => ({ ...prevErrors, errorresponse: '' }));
 };
 
-  const handleCheckboxChange1 = () => {
-    // setErrors((prevErrors) => ({ ...prevErrors, agree1: '' }));
-  };
-
-  const handleCheckboxChange2 = () => {
-    // setErrors((prevErrors) => ({ ...prevErrors, agree2: '' }));
-  };
-
-const handleerrorboxclick = () => {
-  setErrors((prevErrors) => ({ ...prevErrors, username: '' }));
-  setErrors((prevErrors) => ({ ...prevErrors, usermobileno: '' }));
-  setErrors((prevErrors) => ({ ...prevErrors, userotp: '' }));
-  setErrors((prevErrors) => ({ ...prevErrors, errorresponse: '' }));
+const handleCheckboxChange1 = () => {
   setErrors((prevErrors) => ({ ...prevErrors, agree1: '' }));
+};
+
+const handleCheckboxChange2 = () => {
   setErrors((prevErrors) => ({ ...prevErrors, agree2: '' }));
 };
+
+
+  const handleerrorboxclick = () => {
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      username: '',
+      usermobileno: '',
+      userotp: '',
+      errorresponse: '',
+      agree1: '',  // Clear agree1 error
+      agree2: '',  // Clear agree2 error
+    }));
+  };
+  
 
   return (
     <div className={style.container}  style={{ height: 'var(--app-height)' }} >
@@ -275,8 +280,8 @@ const handleerrorboxclick = () => {
       }
 
 
-      { errors && Object.keys(errors).length > 0 
-        && (errors.username || errors.usermobileno || errors.userotp || errors.errorresponse  )
+      { (errors) && (Object.keys(errors).length > 0) 
+        && (errors.username || errors.usermobileno || errors.userotp || errors.errorresponse || errors.agree1 || errors.agree2 )
         && (
         <div className={style.errordisplay} onClick={handleerrorboxclick} >
                { errorIcon && <img src={errorIcon} alt="Error icon" />}
