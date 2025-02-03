@@ -112,7 +112,7 @@ const handleRegButtonClick = async () => {
     }
 
     if (!userotp) {
-      newErrors.userotp = 'Please enter a valid OTP.';
+      newErrors.userotp = 'Please enter OTP.';
     }
 
      if (!document.getElementById('agree1').checked) {
@@ -120,7 +120,7 @@ const handleRegButtonClick = async () => {
      }
 
      if (!document.getElementById('agree2').checked) {
-       newErrors.agree2 = 'You must agree to the terms and conditions.';
+       newErrors.agree2 = 'You must agree to the privacy policy.';
      }
 
     if (Object.keys(newErrors).length > 0) {
@@ -144,7 +144,7 @@ const handleRegButtonClick = async () => {
                             });
                      }      
                      else{
-                         setErrors({ userotp: 'Invalid OTP. Please try again.' });
+                            setErrors({ errorresponse: response.data.msg });
                      }
 
                } catch(error) {
@@ -172,11 +172,11 @@ const handleChangeUserOtp = (event) => {
 };
 
   const handleCheckboxChange1 = () => {
-    setErrors((prevErrors) => ({ ...prevErrors, agree1: '' }));
+    // setErrors((prevErrors) => ({ ...prevErrors, agree1: '' }));
   };
 
   const handleCheckboxChange2 = () => {
-    setErrors((prevErrors) => ({ ...prevErrors, agree2: '' }));
+    // setErrors((prevErrors) => ({ ...prevErrors, agree2: '' }));
   };
 
 const handleerrorboxclick = () => {
@@ -222,10 +222,16 @@ const handleerrorboxclick = () => {
 
       <div className={style.formcheckbox}>
       <input type="checkbox" id="agree2" name="agree2" onChange={handleCheckboxChange2} required />
-      <label htmlFor="agree2"> I consent to receiving marketing communications (news, offers, updates, etc.) & online advertising tailored to your interests from trusted Unilever Brands via email, SMS, WhatsApp, etc. Privacy Notice </label>
+      <label htmlFor="agree2"> I consent to receiving marketing communications (news, offers, updates, etc.) & online advertising tailored to your interests from trusted Unilever Brands via email, SMS, WhatsApp, etc.<span  onClick={() => window.open('https://www.unilevernotices.com/vendor-customer-privacy-notice/india-vendor.html', '_blank')} id={style.tclink}>  Privacy Notice  </span> </label>
       </div>
 
       </div>
+
+      <div className={style.btnwrapper}  onClick={handleRegButtonClick} >
+      <button className={style.button} > Submit </button>
+           { startIcon && <img src={startIcon} alt="start icon"/>}
+      </div>
+
       </>
       :
       <>
@@ -240,7 +246,7 @@ const handleerrorboxclick = () => {
        value={username} 
        onChange={handleChangeUsername}
        required />
-        </div>
+      </div>
 
        <div className={style.forminputbox}>
        <input placeholder='Your Whatsapp Number' 
@@ -252,15 +258,21 @@ const handleerrorboxclick = () => {
       </div>
       <span id={style.spanfornuminput}>We will send your song on this number.</span>
       </div>
+
+       <div className={style.btnwrapper}  onClick={handleOTPButtonClick} >
+       <button className={style.button} >  Send Verification code  </button>
+           { startIcon && <img src={startIcon} alt="start icon"/> }
+       </div>
+
       </>
 
   }
 
-      <div className={style.btnwrapper}  onClick={showotpscreen ? handleRegButtonClick : handleOTPButtonClick} >
-      <button className={style.button} > { showotpscreen ? "Submit" : "Send Verification code"}  </button>
-           { startIcon && <img src={startIcon} alt="start icon"/>}
-      </div>
-
+   {  // <div className={style.btnwrapper}  onClick={showotpscreen ? handleRegButtonClick : handleOTPButtonClick} >
+      // <button className={style.button} > { showotpscreen ? "Submit" : "Send Verification code"}  </button>
+      //      { startIcon && <img src={startIcon} alt="start icon"/>}
+      // </div>
+      }
 
 
       { errors && Object.keys(errors).length > 0 
