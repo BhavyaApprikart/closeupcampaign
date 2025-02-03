@@ -26,7 +26,7 @@ const Loadingsong = () => {
       try {
         const animationDataUrl =
           'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/INITIAL%20Loading-sc.json';
-       
+          
           const animationDataMobileUrl =
           'https://closeup-project.s3.ap-south-1.amazonaws.com/registration-assets/INITIAL%20Mobile-Loading-sc.json';
         const startButtonAnimationDesktopUrl =
