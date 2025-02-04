@@ -10,7 +10,7 @@ const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { friendname, selectedFeature1, selectedFeature2 } = location.state || {};
-  const[ showotpscreen, setShowOtpScreen] = useState(false);
+  const[ showotpscreen, setShowOtpScreen] = useState(true);
   const[ username,setUserName] = useState('');
   const[ usermobileno,setUserMobileNo] = useState('');
   const[ userotp,setUserOtp] = useState('');

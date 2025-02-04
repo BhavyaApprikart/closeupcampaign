@@ -91,6 +91,7 @@
     justify-content:space-around;
     gap: 0.5rem;
     text-align: left;
+    animation: slideUpfrombottom 1s ease-out;
 }
 
 .forminputbox{
@@ -105,7 +106,7 @@
     align-items: center;
     justify-content: center;
     text-align: left;
-    animation: slideUpfrombottom 1s ease-out;
+    /* animation: slideUpfrombottom 1s ease-out; */
 }
 
 
