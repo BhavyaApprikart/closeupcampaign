@@ -1,5 +1,5 @@
 import style from './Selection.module.css';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const Selection = () => {
@@ -18,6 +18,16 @@ const Selection = () => {
  const [singer, setSinger] = useState('');
  const [startIcon, setStartIcon] = useState('');
  const [errorIcon, setErrorIcon] = useState('');
+
+// Inside the component
+const location = useLocation();
+
+// Function to get URL query parameters
+const getQueryParams = () => {
+  return new URLSearchParams(location.search).toString();
+};
+
+
  // Asset loading
  useEffect(() => {
    const loadAssets = async () => {
@@ -91,6 +101,8 @@ const Selection = () => {
 
   const handleGenerateLyrics = () => {
 
+    const queryParams = getQueryParams();
+
     const newErrors = {};
     if (!friendname) {
          newErrors.friendname = `Name must be between 3-10 characters. If it's longer, please use a nickname. Name should not include spaces, special characters or digits.`;  
@@ -111,7 +123,7 @@ const Selection = () => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      navigate('/register', {
+      navigate(`/register?${queryParams}`, {
         state: {
           friendname,
           selectedFeature1,

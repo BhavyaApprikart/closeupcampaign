@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import style from './Home2.module.css';
 import Spinner from './Spinner';
@@ -25,8 +25,17 @@ const Home2 = () => {
     setPlayFullScreenAnimation(true); // Trigger full-screen animation
   };
 
+      // Inside the component
+    const location = useLocation();
+
+    // Function to get URL query parameters
+    const getQueryParams = () => {
+      return new URLSearchParams(location.search).toString();
+    };
+
   const handleFullScreenAnimationComplete = () => {
-    navigate('/selection'); // Navigate after the animation finishes
+        const queryParams = getQueryParams();
+        navigate(`/selection?${queryParams}`);// Navigate after the animation finishes
   };
 
   useEffect(() => {

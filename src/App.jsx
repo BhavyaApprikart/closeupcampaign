@@ -7,8 +7,6 @@ import Thankyou from './pages/LoadingThankScreen/Thankyou.jsx';
 import Home2 from './pages/Home/Home2.jsx';
 import TermsAndConditions from './TermsAndCondition.jsx';
 
-
-
 function App() {
   return (
     <>

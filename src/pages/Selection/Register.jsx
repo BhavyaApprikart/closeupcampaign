@@ -1,14 +1,24 @@
 import style from './Register.module.css';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-
 
 const Register = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+
+  // Example: Extract parameters
+  const utm_source = queryParams.get('utm_source');
+  const utm_medium = queryParams.get('utm_medium');
+  const utm_campaign = queryParams.get('utm_campaign');
+  const utm_term = queryParams.get('utm_term');
+  console.log("UTM Source:", utm_source);
+  console.log("UTM Medium:", utm_medium);
+  console.log("UTM Campaign:", utm_campaign);
+  console.log("UTM Term:", utm_term);
+
   const { friendname, selectedFeature1, selectedFeature2 } = location.state || {};
   const[ showotpscreen, setShowOtpScreen] = useState(false);
   const[ username,setUserName] = useState('');
@@ -86,7 +96,7 @@ const Register = () => {
       return;
     }
            try {
-                 const response = await axios.get(`https://admin.closeuplovetunes.in/api/get_otp/?mobile=${usermobileno}&name=${username}`);
+                 const response = await axios.get(`https://admin.closeuplovetunes.in/api/get_otp/?mobile=${usermobileno}&name=${username}&utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}`);
                  console.log('Sending OTP API Response:', response.data);
 
                  if(response.data.status === "success"){
@@ -119,9 +129,9 @@ const handleRegButtonClick = async () => {
       newErrors.agree1 = 'You must agree to the terms and conditions.';
      }
 
-     if (!document.getElementById('agree2').checked) {
-       newErrors.agree2 = 'You must agree to the privacy policies.';
-     }
+    //  if (!document.getElementById('agree2').checked) {
+    //    newErrors.agree2 = 'You must agree to the privacy policies.';
+    //  }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -129,7 +139,7 @@ const handleRegButtonClick = async () => {
     }
 
   try {
-          const response = await axios.get(`https://admin.closeuplovetunes.in/api/validate_otp/?mobile=${usermobileno}&otp=${userotp}&name=${username}&friend_name=${friendname}&feature1=${selectedFeature1}&feature2=${selectedFeature2}`);
+          const response = await axios.get(`https://admin.closeuplovetunes.in/api/validate_otp/?mobile=${usermobileno}&otp=${userotp}&name=${username}&friend_name=${friendname}&feature1=${selectedFeature1}&feature2=${selectedFeature2}&utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}`);
                    
                    console.log('Register API Response:', response.data);
 
@@ -176,7 +186,7 @@ const handleCheckboxChange1 = () => {
 };
 
 const handleCheckboxChange2 = () => {
-  setErrors((prevErrors) => ({ ...prevErrors, agree2: '' }));
+      // setErrors((prevErrors) => ({ ...prevErrors, agree2: '' }));
 };
 
 
@@ -188,7 +198,6 @@ const handleCheckboxChange2 = () => {
       userotp: '',
       errorresponse: '',
       agree1: '',  // Clear agree1 error
-      agree2: '',  // Clear agree2 error
     }));
   };
   
@@ -281,7 +290,7 @@ const handleCheckboxChange2 = () => {
 
 
       { (errors) && (Object.keys(errors).length > 0) 
-        && (errors.username || errors.usermobileno || errors.userotp || errors.errorresponse || errors.agree1 || errors.agree2 )
+        && (errors.username || errors.usermobileno || errors.userotp || errors.errorresponse || errors.agree1 )
         && (
         <div className={style.errordisplay} onClick={handleerrorboxclick} >
                { errorIcon && <img src={errorIcon} alt="Error icon" />}
@@ -291,7 +300,6 @@ const handleCheckboxChange2 = () => {
             {errors.usermobileno && <span>{errors.usermobileno}</span>}
             {errors.userotp && <span>{errors.userotp}</span>}
             {errors.agree1 && <span>{errors.agree1}</span>}
-            {errors.agree2 && <span>{errors.agree2}</span>}
             {errors.errorresponse && <span>{errors.errorresponse}</span>}
           </div>
         </div>
