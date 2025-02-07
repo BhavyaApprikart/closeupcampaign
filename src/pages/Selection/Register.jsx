@@ -88,7 +88,7 @@ const Register = () => {
     }
 
     if (!indianPhoneNumberRegex.test(usermobileno)) {
-      newErrors.usermobileno = 'Please enter a 10-digit mobile number.';
+      newErrors.usermobileno = 'Please enter a valid 10-digit mobile number.';
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -96,7 +96,7 @@ const Register = () => {
       return;
     }
            try {
-                 const response = await axios.get(`https://admin.closeuplovetunes.in/api/get_otp/?mobile=${usermobileno}&name=${username}&utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}`);
+                 const response = await axios.get(`https://admin.closeuplovetunes.in/api/get_otp/?mobile=${usermobileno}&name=${username}&friend_name=${friendname}&feature1=${selectedFeature1}&feature2=${selectedFeature2}&utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}`);
                  console.log('Sending OTP API Response:', response.data);
 
                  if(response.data.status === "success"){
