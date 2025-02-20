@@ -13,10 +13,12 @@ const Register = () => {
   const utm_source = queryParams.get('utm_source');
   const utm_medium = queryParams.get('utm_medium');
   const utm_campaign = queryParams.get('utm_campaign');
+  const utm_content = queryParams.get('utm_content');
   const utm_term = queryParams.get('utm_term');
   console.log("UTM Source:", utm_source);
   console.log("UTM Medium:", utm_medium);
   console.log("UTM Campaign:", utm_campaign);
+  console.log("UTM Content:", utm_content);
   console.log("UTM Term:", utm_term);
 
   const { friendname, selectedFeature1, selectedFeature2 } = location.state || {};
@@ -96,7 +98,7 @@ const Register = () => {
       return;
     }
            try {
-                 const response = await axios.get(`https://admin.closeuplovetunes.in/api/get_otp/?mobile=${usermobileno}&name=${username}&friend_name=${friendname}&feature1=${selectedFeature1}&feature2=${selectedFeature2}&utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}`);
+                 const response = await axios.get(`https://admin.closeuplovetunes.in/api/get_otp/?mobile=${usermobileno}&name=${username}&friend_name=${friendname}&feature1=${selectedFeature1}&feature2=${selectedFeature2}&utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_content=${utm_content}&utm_term=${utm_term}`);
                  console.log('Sending OTP API Response:', response.data);
 
                  if(response.data.status === "success"){
@@ -139,7 +141,7 @@ const handleRegButtonClick = async () => {
     }
 
   try {
-          const response = await axios.get(`https://admin.closeuplovetunes.in/api/validate_otp/?mobile=${usermobileno}&otp=${userotp}&name=${username}&friend_name=${friendname}&feature1=${selectedFeature1}&feature2=${selectedFeature2}&utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_term=${utm_term}`);
+          const response = await axios.get(`https://admin.closeuplovetunes.in/api/validate_otp/?mobile=${usermobileno}&otp=${userotp}&name=${username}&friend_name=${friendname}&feature1=${selectedFeature1}&feature2=${selectedFeature2}&utm_source=${utm_source}&utm_medium=${utm_medium}&utm_campaign=${utm_campaign}&utm_content=${utm_content}&utm_term=${utm_term}`);
                    
                    console.log('Register API Response:', response.data);
 
